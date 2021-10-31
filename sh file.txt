@@ -1,0 +1,2 @@
+python3 ./bots/1NC/massdm/bot1.py <token> <number of bots> <log_channel> <index counter starts from 0> <print boolean> <max_members>
+
