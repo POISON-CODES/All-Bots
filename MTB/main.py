@@ -218,10 +218,11 @@ async def on_member_remove(member: discord.Member):
         return
 
 initial_extensions = ['cogs.xp_counter',
-                        'cogs.commands',
+                        'cogs.xp_commands',
                         'cogs.Invite_Commands',
                         'cogs.Moderation', 
-                        'jishaku']
+                        'jishaku', 
+                        'cogs.SelfRoles']
 
 if __name__ == '__main__':
     for extension in initial_extensions:

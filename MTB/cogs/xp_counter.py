@@ -47,7 +47,6 @@ class xp_counter(commands.Cog):
 
         cnx.commit()
         cnx.reconnect(attempts=1, delay=0)
-        await self.bot.process_commands(message)
 
 
 
