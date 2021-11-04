@@ -1,19 +1,48 @@
 import discord
 from discord.ext import commands
 from discord.ui import view
+import cogs.ROLES as cfg
 
-class SelfRoleDemo1(discord.ui.View):
-       def __init__(self, ctx):
-              self.ctx = ctx
+class Gender(discord.ui.View):
+       def __init__(self):
               super().__init__(timeout= None)
 
-       @discord.ui.button(emoji='<:CODMBR:797376126212374528>', style=discord.ButtonStyle.green, custom_id="CODMSR")
-       async def CODM(self, button = discord.ui.Button, interaction = discord.Interaction):
-              await interaction.response.send_message('CODM ROLE', ephemeral = True)
+       @discord.ui.button(emoji='♂️', style=discord.ButtonStyle.green, custom_id="MALE")
+       async def MALE(self, button = discord.ui.Button, interaction = discord.Interaction):
+              male = interaction.guild.get_role(int(cfg.MALE))
+              female = interaction.guild.get_role(int(cfg.FEMALE))
 
-       @discord.ui.button(emoji="<:MTB:792844123945566238>", style= discord.ButtonStyle.primary, custom_id="MTBSR")
-       async def MTB(self, button = discord.ui.Button, interaction = discord.Interaction):
-              await interaction.response.send_message('MTB ROLE', ephemeral = True)
+              if male in interaction.user.roles:
+                     await interaction.user.remove_roles(male, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Removed {male.mention}.', ephemeral = True)
+
+              elif female in interaction.user.roles:
+                     await interaction.user.remove_roles(female, reason = "Self Roles Buttons. ")
+                     await interaction.user.add_roles(male, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Removed {female.mention} and added {male.mention}.', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(male, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Added {male.mention}.', ephemeral = True)
+
+       @discord.ui.button(label = "♀️", style= discord.ButtonStyle.green, custom_id="FEMALE")
+       async def FEMALE(self, button = discord.ui.Button, interaction = discord.Interaction):
+              male = interaction.guild.get_role(int(cfg.MALE))
+              female = interaction.guild.get_role(int(cfg.FEMALE))
+
+              if female in interaction.user.roles:
+                     await interaction.user.remove_roles(female, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Removed {female.mention}.', ephemeral = True)
+
+              elif male in interaction.user.roles:
+                     await interaction.user.remove_roles(male, reason = "Self Roles Buttons. ")
+                     await interaction.user.add_roles(female, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Removed {male.mention} and added {female.mention}.', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(female, reason = "Self Roles Buttons. ")
+                     await interaction.response.send_message(f'Added {female.mention}.', ephemeral = True)
+
+                     
+
 
 
 class Main(commands.Cog):
@@ -22,9 +51,11 @@ class Main(commands.Cog):
 
        @commands.command()
        async def SR1(self, ctx):
-
-              view = SelfRoleDemo1(ctx = ctx)
-              await ctx.send('SR1', view = view)
+              view = Gender()
+              embed = discord.Embed(title = "GENDER", description = f':male_sign:  -->>  Male\n'
+                                                                    f'♀️  -->>  Female.', color = discord.Color.green())
+       
+              await ctx.send(embed = embed, view = view)
 
 
 def setup(bot):

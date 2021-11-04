@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 import time
 from discord.ext import buttons 
 from discord.ext.buttons import Paginator
+from cogs.SelfRoles import *
 
 class MyPaginator(buttons.Paginator):
        def __init__(self, *args, **kwargs):
@@ -91,10 +92,11 @@ bot.help_command = MyHelp()
 
 @bot.event
 async def on_ready():
-    logging.basicConfig(filename='myapp.log', level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-    logging.info('Started')
-    logging.info('Finished')
-    print('test')
+    bot.persistent_views_added = False
+
+    if not bot.persistent_views_added:
+        bot.add_view(Gender())
+        bot.persistent_views_added = True
     print(f'logged in as {bot.user}')   
     print(f'ID:{bot.user.id}')
 
