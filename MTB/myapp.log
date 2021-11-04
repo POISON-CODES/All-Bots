@@ -857,3 +857,1187 @@ aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host discord.c
 11/03/2021 09:23:02 PM Shard ID None has connected to Gateway: ["gateway-prd-main-n33d",{"micros":95962,"calls":["discord-sessions-green-prd-2-40",{"micros":95172,"calls":["start_session",{"micros":90750,"calls":["api-prd-main-z6jf",{"micros":81261,"calls":["get_user",{"micros":6932},"add_authorized_ip",{"micros":2697},"get_guilds",{"micros":13337},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3699,"calls":[]}]}]}] (Session ID: 8789fa8c59a5bfa55d4d97db3058e189).
 11/03/2021 09:23:04 PM Started
 11/03/2021 09:23:04 PM Finished
+11/03/2021 09:25:02 PM Started
+11/03/2021 09:25:02 PM Finished
+11/03/2021 09:51:59 PM Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:09 PM Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:19 PM Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:29 PM Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:39 PM Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:49 PM Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:52:59 PM Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:53:09 PM Shard ID None heartbeat blocked for more than 80 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:53:19 PM Shard ID None heartbeat blocked for more than 90 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:53:29 PM Shard ID None heartbeat blocked for more than 100 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 18, in on_message
+    cnx.reconnect(attempts=1, delay=0)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1121, in reconnect
+    self.connect()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 1009, in connect
+    self._open_connection()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 420, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 230, in _do_auth
+    self._auth_switch_request(username, password)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 246, in _auth_switch_request
+    packet = self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 09:53:37 PM Websocket closed with 1000, cannot reconnect.
+11/03/2021 09:53:37 PM Attempting a reconnect in 0.61s
+Traceback (most recent call last):
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 512, in connect
+    await self.ws.poll_event()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\gateway.py", line 585, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+11/03/2021 09:53:38 PM Shard ID None has sent the RESUME payload.
+11/03/2021 09:53:39 PM Shard ID None session has been invalidated.
+11/03/2021 09:53:39 PM Got a request to IDENTIFY the websocket.
+11/03/2021 09:53:44 PM Shard ID None has sent the IDENTIFY payload.
+11/03/2021 09:53:45 PM Shard ID None has connected to Gateway: ["gateway-prd-main-djhr",{"micros":79259,"calls":["discord-sessions-green-prd-2-168",{"micros":76224,"calls":["start_session",{"micros":30993,"calls":["api-prd-main-vvp8",{"micros":27483,"calls":["get_user",{"micros":2987},"add_authorized_ip",{"micros":2505},"get_guilds",{"micros":3781},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":6,"calls":[]},"presence_connect",{"micros":5176,"calls":[]}]}]}] (Session ID: 326860c474116be785926630079b01ba).
+11/03/2021 09:53:47 PM Started
+11/03/2021 09:53:47 PM Finished
+11/03/2021 10:05:31 PM Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:05:41 PM Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:05:51 PM Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:06:01 PM Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:06:11 PM Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 18, in on_message
+    cnx.reconnect(attempts=1, delay=0)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1121, in reconnect
+    self.connect()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 1009, in connect
+    self._open_connection()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 420, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 212, in _do_auth
+    self._socket.switch_to_ssl(ssl_options.get('ca'),
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 458, in switch_to_ssl
+    self.sock = context.wrap_socket(
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+
+11/03/2021 10:06:21 PM Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 18, in on_message
+    cnx.reconnect(attempts=1, delay=0)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1121, in reconnect
+    self.connect()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 1013, in connect
+    self._post_connection()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 985, in _post_connection
+    self.set_charset_collation(self._charset_id)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 943, in set_charset_collation
+    self._execute_query("SET NAMES '{0}' COLLATE '{1}'".format(
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:06:24 PM Timed out receiving packet. Attempting a reconnect.
+11/03/2021 10:06:24 PM Got a request to RESUME the websocket.
+11/03/2021 10:06:24 PM Shard ID None has sent the RESUME payload.
+11/03/2021 10:07:00 PM Shard ID None has successfully RESUMED session 326860c474116be785926630079b01ba under trace ["gateway-prd-main-zfxx",{"micros":1746,"calls":["discord-sessions-green-prd-2-168",{"micros":106}]}].
+11/03/2021 10:07:15 PM Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:07:25 PM Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:07:35 PM Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:07:45 PM Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:07:55 PM Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:05 PM Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:15 PM Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:26 PM Shard ID None heartbeat blocked for more than 80 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:36 PM Shard ID None heartbeat blocked for more than 90 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:46 PM Shard ID None heartbeat blocked for more than 100 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:08:56 PM Shard ID None heartbeat blocked for more than 110 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:09:06 PM Shard ID None heartbeat blocked for more than 120 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 18, in on_message
+    cnx.reconnect(attempts=1, delay=0)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1121, in reconnect
+    self.connect()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 1009, in connect
+    self._open_connection()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 420, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 230, in _do_auth
+    self._auth_switch_request(username, password)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 246, in _auth_switch_request
+    packet = self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:09:16 PM Shard ID None heartbeat blocked for more than 130 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 42, in on_message
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:09:22 PM Timed out receiving packet. Attempting a reconnect.
+11/03/2021 10:09:22 PM Got a request to RESUME the websocket.
+11/03/2021 10:09:23 PM Shard ID None has sent the RESUME payload.
+11/03/2021 10:09:23 PM Shard ID None session has been invalidated.
+11/03/2021 10:11:27 PM Got a request to IDENTIFY the websocket.
+11/03/2021 10:11:33 PM Shard ID None has sent the IDENTIFY payload.
+11/03/2021 10:11:33 PM Shard ID None has connected to Gateway: ["gateway-prd-main-9526",{"micros":128574,"calls":["discord-sessions-green-prd-2-143",{"micros":127527,"calls":["start_session",{"micros":106663,"calls":["api-prd-main-cpt5",{"micros":98711,"calls":["get_user",{"micros":5024},"add_authorized_ip",{"micros":11553},"get_guilds",{"micros":15492},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":13060,"calls":[]}]}]}] (Session ID: 4cf284c8531e8d213fd5ccfd3c08a317).
+11/03/2021 10:11:35 PM Started
+11/03/2021 10:11:35 PM Finished
+11/03/2021 10:33:42 PM Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:33:52 PM Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:34:02 PM Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:34:12 PM Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 131, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:34:22 PM Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\main.py", line 137, in on_member_join
+    cursor.execute(f'SELECT * FROM invitecodes WHERE invite_code = \'{inv.code}\'')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:34:32 PM Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 42, in on_message
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+11/03/2021 10:34:42 PM Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "d:\Aman\All-Bots\MTB\main.py", line 242, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 653, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 351, in _run_event
+    await coro(*args, **kwargs)
+  File "d:\Aman\All-Bots\MTB\cogs\xp_counter.py", line 49, in on_message
+    cnx.reconnect(attempts=1, delay=0)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1121, in reconnect
+    self.connect()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\abstracts.py", line 1009, in connect
+    self._open_connection()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 420, in _open_connection
+    self._do_auth(self._user, self._password,
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 212, in _do_auth
+    self._socket.switch_to_ssl(ssl_options.get('ca'),
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 458, in switch_to_ssl
+    self.sock = context.wrap_socket(
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+
+11/03/2021 10:34:48 PM Websocket closed with 1000, cannot reconnect.
+11/03/2021 10:34:48 PM Attempting a reconnect in 0.06s
+Traceback (most recent call last):
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 512, in connect
+    await self.ws.poll_event()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\gateway.py", line 585, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+11/03/2021 10:34:48 PM Shard ID None has sent the RESUME payload.
+11/03/2021 10:34:58 PM Shard ID None has successfully RESUMED session 4cf284c8531e8d213fd5ccfd3c08a317 under trace ["gateway-prd-main-rhrd",{"micros":894,"calls":["discord-sessions-green-prd-2-143",{"micros":71}]}].
