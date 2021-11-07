@@ -5,24 +5,21 @@ from discord.activity import Game
 from discord.ext import commands
 from discord.ext.commands import Greedy
 import time
+from cogs.SelfRoles import *
 
 intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-initial_extensions = ['cogs.memjoin', 
-                    'cogs.modmail',
-                    'cogs.modmailcmds', 
-                    'cogs.selfRoles']
-
-
 @bot.event
 async def on_ready():
     print(f'logged in as {bot.user},{bot.user.id}')
+    persistent_views_added = False
+    if not persistent_views_added:
+        bot.add_view(Game())
+        persistent_views_added = True
 
-#bot.activity = discord.Game(name = 'BGMI')
-bot.change_presence(status=discord.Status.invisible)
 
 @bot.event
 async def on_message(message):
@@ -74,13 +71,16 @@ async def announce(ctx, channel: discord.TextChannel = None, *, args = None):
             await ctx.send(i, delete_after = 2)
           await channel.send(args)'''
 
+initial_extensions = ['cogs.modmail',
+                    'cogs.modmailcmds', 
+                    'cogs.SelfRoles']
 
 if __name__ == '__main__':
-       for extension in initial_extensions:
-              try:
-                     bot.load_extension(extension)
-                     print(f'loaded {extension}')
-              except:
-                     print(f'Could not load {extension}')
+    for extension in initial_extensions:
+        try:
+            bot.load_extension(extension)
+            print(f'loaded {extension}')
+        except:
+            print(f'Could not load {extension}')
 
 bot.run('ODkxNzEyODM2MjE1MTI4MDY0.YVCWSw.d6Y7aNkyVbRX3Q-cA_oLebM-6HI')
