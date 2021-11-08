@@ -98,6 +98,7 @@ async def on_ready():
         bot.add_view(Gender())
         bot.add_view(Age())
         bot.add_view(Game())
+        bot.add_view(Pings())
         bot.persistent_views_added = True
     print(f'logged in as {bot.user}')   
     print(f'ID:{bot.user.id}')

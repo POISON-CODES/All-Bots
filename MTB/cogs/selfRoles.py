@@ -115,6 +115,53 @@ class Game(discord.ui.View):
                      await interaction.user.add_roles(FF, reason = "Self Roles.")
                      await interaction.response.send_message(f'Added {FF.mention}.', ephemeral = True)
        
+class Pings(discord.ui.View):
+       def __init__(self):
+              super().__init__(timeout=None)
+
+       @discord.ui.button(emoji = '🎉', style = discord.ButtonStyle.green, custom_id = "GIVEAWAY")
+       async def GIVEAWAY(self, button = discord.ui.Button, interaction = discord.Interaction):
+              GA = interaction.guild.get_role(int(cfg.GIVEAWAY))
+              if GA in interaction.user.roles:
+                     await interaction.user.remove_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {GA.mention}', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {GA.mention}.', ephemeral = True)
+
+       @discord.ui.button(emoji = '<a:CROSS:816546045210263592>', style = discord.ButtonStyle.green, custom_id = "ALLIANCE")
+       async def ALLIANCE(self, button = discord.ui.Button, interaction = discord.Interaction):
+              GA = interaction.guild.get_role(int(cfg.ALLIANCE))
+              if GA in interaction.user.roles:
+                     await interaction.user.remove_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {GA.mention}', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {GA.mention}.', ephemeral = True)
+
+       @discord.ui.button(emoji = '<a:MTBLOGO:861300241797087312>', style = discord.ButtonStyle.green, custom_id = "STAFF")
+       async def STAFF(self, button = discord.ui.Button, interaction = discord.Interaction):
+              GA = interaction.guild.get_role(int(cfg.STAFF))
+              if GA in interaction.user.roles:
+                     await interaction.user.remove_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {GA.mention}', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {GA.mention}.', ephemeral = True)
+
+       @discord.ui.button(emoji = '<a:aa5:760424510846795778>', style = discord.ButtonStyle.green, custom_id = "CLAN")
+       async def CLAN(self, button = discord.ui.Button, interaction = discord.Interaction):
+              GA = interaction.guild.get_role(int(cfg.CLAN))
+              if GA in interaction.user.roles:
+                     await interaction.user.remove_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {GA.mention}', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(GA, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {GA.mention}.', ephemeral = True)
+
+       
+
+              
 
 
 
@@ -132,7 +179,7 @@ class Main(commands.Cog):
 
               view = Age()
               embed = discord.Embed(title = 'YOUR AGE', description=f"18<:9195_upvote:733231877376311336> - 18+\n"
-              f'18<:2140_downvote:733231877087035473> - 18-', color=discord.Color.green())
+                                                                      f'18<:2140_downvote:733231877087035473> - 18-', color=discord.Color.green())
 
               await ctx.send(embed=embed, view = view)
 
@@ -143,6 +190,13 @@ class Main(commands.Cog):
 
               await ctx.send(embed=embed, view = view)
 
+              view = Pings()
+              embed = discord.Embed(title = "PINGS", description=f":tada: - Giveaway Ping.\n"
+                                                               f'<a:CROSS:816546045210263592> - No Alliance Ping.\n'
+                                                               f'<:MTB:792844123945566238> - Staff Recruitment Ping.\n'
+                                                               f'<a:aa5:760424510846795778> - Clan Recruitment Ping.', color = discord.Color.green())
+
+              await ctx.send(embed=embed, view=view)
 
 
 
