@@ -1,3 +1,4 @@
+from datetime import time
 import discord
 from discord.ext import commands
 from discord.ui import view
@@ -80,6 +81,39 @@ class Age(discord.ui.View):
                      await interaction.user.add_roles(elder, reason = "Self Roles Buttons. ")
                      await interaction.response.send_message(f'Added {elder.mention}.', ephemeral = True)
 
+class Game(discord.ui.View):
+       def __init__(self):
+              super().__init__(timeout=None)
+
+       @discord.ui.button(emoji="<a:FREEFIRELOGO:861196262191398923>", style=discord.ButtonStyle.green, custom_id="FreeFire")
+       async def FF(self, button = discord.ui.Button, interaction = discord.Interaction):
+              FF = interaction.guild.get_role(int(cfg.FF))
+              if FF in interaction.user.roles:
+                     await interaction.user.remove_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {FF.mention}.', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {FF.mention}.', ephemeral = True)
+
+       @discord.ui.button(emoji="<a:CODMLOGO:861196266583490601>", style=discord.ButtonStyle.green, custom_id="CODM")
+       async def CODM(self, button = discord.ui.Button, interaction = discord.Interaction):
+              FF = interaction.guild.get_role(int(cfg.CODM))
+              if FF in interaction.user.roles:
+                     await interaction.user.remove_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {FF.mention}.', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {FF.mention}.', ephemeral = True)
+
+       @discord.ui.button(emoji="<a:PUBGPAN:861196264120385576>", style=discord.ButtonStyle.green, custom_id="BGMI")
+       async def BGMI(self, button = discord.ui.Button, interaction = discord.Interaction):
+              FF = interaction.guild.get_role(int(cfg.BGMI))
+              if FF in interaction.user.roles:
+                     await interaction.user.remove_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Removed {FF.mention}.', ephemeral = True)
+              else:
+                     await interaction.user.add_roles(FF, reason = "Self Roles.")
+                     await interaction.response.send_message(f'Added {FF.mention}.', ephemeral = True)
        
 
 
@@ -97,11 +131,17 @@ class Main(commands.Cog):
               await ctx.send(embed = embed, view = view)
 
               view = Age()
-              embed = discord.Embed(title = 'YOUR AGE', description=f"<a:18plus:861193130283368448> - 18+,\n"
-              f'<a:18minus:861193130421780480> - 18-', color=discord.Color.green())
+              embed = discord.Embed(title = 'YOUR AGE', description=f"18<:9195_upvote:733231877376311336> - 18+\n"
+              f'18<:2140_downvote:733231877087035473> - 18-', color=discord.Color.green())
 
               await ctx.send(embed=embed, view = view)
 
+              view = Game()
+              embed = discord.Embed(title = "YOUR GAME", description=f"FREE FIRE\n"
+                                                                      f"<:CODM:797373006107901952> - CODM\n"
+                                                                      f"<:groza:792846214335954975> - BGMI", color = discord.Color.green())
+
+              await ctx.send(embed=embed, view = view)
 
 
 
