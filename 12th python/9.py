@@ -8,3 +8,4 @@ for i in range(len(list_1)):
        list_3.append(list_2[i])
 
 print(list_3)
+
