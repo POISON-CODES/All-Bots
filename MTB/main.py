@@ -89,6 +89,7 @@ class MyHelp(commands.HelpCommand):
 
 bot.help_command = MyHelp()
 
+#Svshsyjhfmghjm,h
 
 @bot.event
 async def on_ready():
