@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 import time
 from discord.ext import buttons 
 from discord.ext.buttons import Paginator
-from cogs.SelfRoles import *
+from cogs.selfRoles import *
 
 class MyPaginator(buttons.Paginator):
        def __init__(self, *args, **kwargs):
@@ -96,6 +96,7 @@ async def on_ready():
 
     if not bot.persistent_views_added:
         bot.add_view(Gender())
+        bot.add_view(Age())
         bot.persistent_views_added = True
     print(f'logged in as {bot.user}')   
     print(f'ID:{bot.user.id}')
@@ -224,7 +225,7 @@ initial_extensions = ['cogs.xp_counter',
                         'cogs.Invite_Commands',
                         'cogs.Moderation', 
                         'jishaku', 
-                        'cogs.SelfRoles']
+                        'cogs.selfRoles']
 
 if __name__ == '__main__':
     for extension in initial_extensions:

@@ -5,7 +5,7 @@ from discord.activity import Game
 from discord.ext import commands
 from discord.ext.commands import Greedy
 import time
-from cogs.SelfRoles import *
+from cogs.selfRoles import *
 
 intents = discord.Intents.default()
 intents.members = True
@@ -73,7 +73,8 @@ async def announce(ctx, channel: discord.TextChannel = None, *, args = None):
 
 initial_extensions = ['cogs.modmail',
                     'cogs.modmailcmds', 
-                    'cogs.SelfRoles']
+                    'cogs.selfRoles',
+                    'cogs.memjoin']
 
 if __name__ == '__main__':
     for extension in initial_extensions:
