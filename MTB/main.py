@@ -58,7 +58,7 @@ intents.members = True
 
 
 
-bot = commands.Bot(command_prefix = '+' ,intents=intents, )
+bot = commands.Bot(command_prefix = '+' ,intents=intents)
 
 
 class MyHelp(commands.HelpCommand):
