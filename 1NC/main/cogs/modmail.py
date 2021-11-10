@@ -27,7 +27,6 @@ class ModMail(commands.Cog):
               server = self.bot.get_guild(int(server_id))
               Role1 = server.get_role(int(config['MODMAIL']['MOD_ROLE']))
               ping_bool=server.get_role(str(config['MODMAIL']['PING_BOOL']))
-
               ######################      JSON      #################
 
 
