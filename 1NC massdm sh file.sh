@@ -1,4 +1,4 @@
-python3 ./bots/massdm/"new massdm"/bot1.py ODkyMjY5MDMyMDcyNDEzMjA1.YVKcSg.Gv9mlSGtRNI0EVnRMkGnOV5PF_c 20 898996028123021382 0 True 1600 &
+python3 ./bots/massdm/"new massdm"/bot1.py ODkyMjY5MDMyMDcyNDEzMjA1.YVKcSg.Gv9mlSGtRNI0EVnRMkGnOV5PF_c 20 898996028123021382 0 True 1700 &
 python3 ./bots/massdm/"new massdm"/bot1.py ODkyMjY5ODY1MzcxNTcwMjE2.YVKdEQ.F5eEkmUF4uujaijCL33HYJm28Ec 20 898996028123021382 1 False 1700 &
 python3 ./bots/massdm/"new massdm"/bot1.py ODkyMjcwMDgwNTg5NzA5MzU0.YVKdRA.VAu0NDYjbDljam28YOlNYwB8RgY 20 898996028123021382 2 False 1700 &
 python3 ./bots/massdm/"new massdm"/bot1.py ODkyMjcwMzIxMTQxNDMyMzMw.YVKdfg.lYznLgwsnmUWP2l14AbT2nEuNkM 20 898996028123021382 3 False 1700 &
