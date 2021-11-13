@@ -132,10 +132,5 @@ class ModMail(commands.Cog):
                             return
 
 
-       def this_server(guild, author:discord.User, message):
-              channel = guild.create_text_channel(name = str(author.id))
-              
-
-
 def setup(bot):
        bot.add_cog(ModMail(bot))

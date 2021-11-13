@@ -16,7 +16,7 @@ async def on_ready():
 
 initial_extensions = ['cogs.verify',
                      f'cogs.about',
-                     f'jishaku']
+                     f'jishaku',]
 
 for extension in initial_extensions:
        try:
