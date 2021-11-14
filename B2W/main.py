@@ -18,7 +18,8 @@ async def on_ready():
 initial_extensions = ['cogs.verify',
                      f'cogs.about',
                      f'jishaku',
-                     f'cogs.ModMail']
+                     f'cogs.ModMail',
+                     f'cogs.ModMailcmds']
 
 @bot.command()
 async def ping(ctx):
