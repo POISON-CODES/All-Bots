@@ -63,6 +63,8 @@ class Main(commands.Cog):
                                    f'Official Bot      : {BoT.mention}\n'
                                    f'Bot Developer     : {poison.mention}')
               embed.color = discord.Color.green()
+              if not ctx.guild.icon == None:
+                     embed.set_footer(text=f'{ctx.guild.name} | {ctx.guild.id}', icon_url = ctx.guild.icon.url)
               embed.set_thumbnail(url=ctx.guild.icon)
 
               await ctx.send(embed = embed)
@@ -79,13 +81,13 @@ class Main(commands.Cog):
               embed.add_field(name = "Python Version", value = f'```diff\n'
                                    f'- Python Version: \n+ {((sys.version).split(" "))[0]}```', inline = True)
               embed.add_field(name = "\u200b", value = "\u200b", inline = True)
-              embed.add_field(name = "Bot Version", value = f'```diff\n- Bot Version: \n+ 1.0.0a\n```')
+              embed.add_field(name = "Bot Version", value = f'```diff\n- Bot Version: \n+ 1.1.0a\n```')
               embed.add_field(name = "Discord.py Version", value = f'```diff\n- Discord.py Version: \n+ {discord.__version__}```', inline = True)
               embed.add_field(name = "\u200b", value = "\u200b", inline = True)
               embed.add_field(name ="Bot Developer", value = f'```diff\n- Bot Developer: \n+ {poison.name}#{poison.discriminator}```', inline = True)
               embed.set_author(name = poison.name, icon_url = poison.display_avatar.url)
               # embed.set_thumbnail(url=poison.display_avatar.url)
-              embed.set_footer(text = f'{poison.name} | {poison.id}')
+              embed.set_footer(text = f'{poison.name} | {poison.id}', icon_url = poison.display_avatar.url)
               embed.timestamp = discord.utils.utcnow()
               view = POISONDM()
               await ctx.send(embed = embed, view = view, delete_after = 600)
