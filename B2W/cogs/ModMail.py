@@ -17,7 +17,7 @@ class ModMail(commands.Cog):
               if message.author == self.bot.user:
                      return
 
-              with open("B2W/cogs/bans.json", "r") as f:
+              with open("cogs/bans.json", "r") as f:
                      config=json.load(f)
 
               data = config['BANS']

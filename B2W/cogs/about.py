@@ -63,10 +63,7 @@ class Main(commands.Cog):
                                    f'Official Bot      : {BoT.mention}\n'
                                    f'Bot Developer     : {poison.mention}')
               embed.color = discord.Color.green()
-              if not ctx.guild.icon == None:
-                     embed.set_footer(text=f'{ctx.guild.name} | {ctx.guild.id}', icon_url = ctx.guild.icon.url)
-              embed.set_thumbnail(url=ctx.guild.icon)
-
+              embed.set_thumbnail(url = ctx.guild.icon.url)
               await ctx.send(embed = embed)
 
 
