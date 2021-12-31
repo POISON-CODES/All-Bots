@@ -1,0 +1,26 @@
+{
+    "TOTALORDERS": 0,
+    "COMPLETED_ORDERS": {
+        "ARTIST": "NUMBER",
+        "724283255959978057": 0
+    },
+    "ORDERS": {
+        "0": {
+            "CLIENT": "898502412703252480",
+            "ARTIST": "724283255959978057",
+            "PAYMENT": "PAYTM",
+            "WORK": "PFP",
+            "STYLE": "VECTOR",
+            "PRICE": "200",
+            "LINK": "https://google.com",
+            "REVIEW": "amazing work."
+        }
+    },
+    "CURRENT": {
+        "CLIENT": "ARTIST"
+    },
+    "CHANNELS": {
+        "CHANNEL": "CLIENT",
+        "920361054855389214": 724283255959978057
+    }
+}
