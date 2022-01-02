@@ -11,7 +11,8 @@ class TICKET(discord.ui.View):
 
        @discord.ui.button(label = 'Ticket', style=discord.ButtonStyle.green, custom_id = 'Ticket:green')
        async def ticketopen(self, button = discord.ui.Button, interaction = discord.Interaction):
-              ticket = await interaction.guild.create_text_channel(name = f'ticket-{interaction.user.name}')
+              category = discord.utils.get(interaction.guild.categories, id=int(cfg.TICKET))
+              ticket = await category.create_text_channel(name = f'ticket-{interaction.user.name}')
               overwrites = {
               interaction.guild.default_role: discord.PermissionOverwrite(
               read_messages=False,
@@ -24,12 +25,12 @@ class TICKET(discord.ui.View):
               await ticket.edit(overwrites=overwrites)
 
               await interaction.response.send_message(f'Your Ticket has been opened. Please move to {ticket.mention}', ephemeral = True)
-              await ticket.send(f'{interaction.user.mention} Help will be with you shortly.')
+              # await ticket.send(f'{interaction.user.mention} Help will be with you shortly.')
               embed = discord.Embed(title = f'{interaction.user.name}', description = f'This ticket is opened by {interaction.user.mention}.', color = discord.Color(0x2C2F33))
               embed.timestamp = discord.utils.utcnow()
               embed.set_footer(text = f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
               view=CLOSE()
-              await ticket.send(embed= embed, view = view)
+              await ticket.send(content = f'{interaction.user.mention} | <@&{int(cfg.SUPPORT)}>',embed= embed, view = view)
 
 
 class Ticket(commands.Cog):

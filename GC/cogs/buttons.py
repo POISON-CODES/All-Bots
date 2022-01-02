@@ -46,6 +46,34 @@ class BUTTON1(discord.ui.View):
 
               await client.send(embed=embed)
               await interaction.channel.edit(name=f'claimed-{client.name}')
+
+              overwrites = {
+                     interaction.user: discord.PermissionOverwrite(
+                            send_messages=True,
+                            view_channel=True,
+                            manage_messages=False,
+                            manage_channels=False,
+                            manage_permissions=False
+                     ), 
+
+                     artists: discord.PermissionOverwrite(
+                            view_channel=False
+                     ),
+
+                     interaction.guild.default_role: discord.PermissionOverwrite(
+                            view_channel=False
+                     ),
+
+                     client: discord.PermissionOverwrite(
+                            send_messages=True,
+                            view_channel=True,
+                            manage_messages=False,
+                            manage_channels=False,
+                            manage_permissions=False
+                     )
+              }
+
+              await interaction.channel.edit(overwrites=overwrites)
               return
 
        @discord.ui.button(label='Reject', style=discord.ButtonStyle.blurple, custom_id = 'reject1:blurple')
@@ -124,7 +152,7 @@ class BUTTON2(discord.ui.View):
        @discord.ui.button(label='Unclaim', style=discord.ButtonStyle.blurple, custom_id='unclaim:blurple')
        async def unclaim(self, button = discord.ui.Button, interaction = discord.Interaction):
               await interaction.message.delete()
-              embed = discord.Embed(title=f'Place Your Order', description=f'Place an order here.\nType `!procedure` to know the Procedure.\n`!price` to know basic price chart.\n`!category` to know different types of categories.\n`!form` to fill the form for our artists to understand your idea.', color = discord.Color(0x2C2F33))
+              embed = discord.Embed(title=f'Place Your Order', description=f'Place an order here.\nType `%procedure` to know the Procedure.\n`%price` to know basic price chart.\n`%form` to fill the form for our artists to understand your idea.', color = discord.Color(0x2C2F33))
               embed.set_footer(text = f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
               embed.set_thumbnail(url=interaction.guild.icon)
               embed.timestamp = discord.utils.utcnow()
@@ -138,6 +166,38 @@ class BUTTON2(discord.ui.View):
 
               with open('cogs/orders.json', 'w') as f:
                      json.dump(data, f, indent = 4)
+
+              client = await interaction.guild.get_member(int(data['CHANNELS'][str(interaction.channel.id)]))
+
+              await interaction.channel.edit(name=f'unclaimed-{client.name}')
+              artists = interaction.guild.get_role(int(cfg.ARTISTS))
+
+              overwrites = {
+                     interaction.user: discord.PermissionOverwrite(
+                            send_messages=True,
+                            view_channel=True,
+                            manage_messages=False,
+                            manage_channels=False,
+                            manage_permissions=False
+                     ),
+                     artists: discord.PermissionOverwrite(
+                            send_messages=True,
+                            view_channel=True,
+                            manage_messages=False,
+                            manage_channels=False,
+                            manage_permissions=False
+                     ),
+                     interaction.guild.default_role: discord.PermissionOverwrite(
+                            send_messages=False,
+                            view_channel=False,
+                            manage_messages=False,
+                            manage_channels=False,
+                            manage_permissions=False
+                     )
+
+              }
+              await interaction.channel.edit(overwrites=overwrites)
+
 
        @discord.ui.button(label='Reject', style=discord.ButtonStyle.blurple, custom_id = 'reject2:blurple')
        async def reject(self, button = discord.ui.Button, interaction = discord.Interaction):
@@ -223,7 +283,7 @@ class Confirmation(discord.ui.View):
               )
               }
               await channel.edit(overwrites=overwrites)
-              await channel.edit(name=f'completed-{self.client.name}')
+              await interaction.channel.edit(name=f'completed-{self.client.name}')
 
               with open('cogs/orders.json', 'r') as f:
                      data= json.load(f)
@@ -239,6 +299,16 @@ class Confirmation(discord.ui.View):
 
               with open('cogs/orders.json', 'w') as f:
                      json.dump(data, f, indent = 4)
+              clients=discord.utils.get(interaction.guild.roles, id = int(cfg.CLIENT))
+              await self.client.add_roles(clients)
+              def rate(rating):
+                     rating.author.id == self.client.id and rating.isdigit() and rating.channel.id==interaction.channel.id
+              channel = interaction.channel
+              await channel.send(f"How would you rate {self.artist.mention}'s work on a scale of 1-10?")
+              rating = await self.bot.wait_for('message', check = rate())
+
+
+       
 
        @discord.ui.button(label='Cancel', style=discord.ButtonStyle.danger, custom_id = 'cancel3:red')
        async def can(self, button = discord.ui.Button, interaction = discord.Interaction):
