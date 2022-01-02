@@ -78,7 +78,7 @@ class Main(commands.Cog):
               embed.add_field(name = "Python Version", value = f'```diff\n'
                                    f'- Python Version: \n+ {((sys.version).split(" "))[0]}```', inline = True)
               embed.add_field(name = "\u200b", value = "\u200b", inline = True)
-              embed.add_field(name = "Bot Version", value = f'```diff\n- Bot Version: \n+ 1.1.0a\n```')
+              embed.add_field(name = "Bot Version", value = f'```diff\n- Bot Version: \n+ 1.1.0a\n```', inline = True)
               embed.add_field(name = "Discord.py Version", value = f'```diff\n- Discord.py Version: \n+ {discord.__version__}```', inline = True)
               embed.add_field(name = "\u200b", value = "\u200b", inline = True)
               embed.add_field(name ="Bot Developer", value = f'```diff\n- Bot Developer: \n+ {poison.name}#{poison.discriminator}```', inline = True)

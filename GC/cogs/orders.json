@@ -1,5 +1,5 @@
 {
-    "TOTALORDERS": 0,
+    "TOTALORDERS": "0",
     "COMPLETED_ORDERS": {
         "ARTIST": "NUMBER",
         "724283255959978057": 0
@@ -12,8 +12,7 @@
             "WORK": "PFP",
             "STYLE": "VECTOR",
             "PRICE": "200",
-            "LINK": "https://google.com",
-            "REVIEW": "amazing work."
+            "LINK": "https://google.com"
         }
     },
     "CURRENT": {
@@ -21,6 +20,6 @@
     },
     "CHANNELS": {
         "CHANNEL": "CLIENT",
-        "920361054855389214": 724283255959978057
+        "926844212085944331": "724283255959978057"
     }
 }

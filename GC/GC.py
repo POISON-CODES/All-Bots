@@ -9,7 +9,7 @@ from cogs.buttons import *
 
 
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('/'), intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('%'), intents=intents)
 bot.case_insensitive = True
 
 
@@ -19,14 +19,15 @@ async def on_ready():
     print(f'{bot.user.id}')
     bot.add_view(TICKET())
     bot.add_view(CLOSE())
-    bot.add_view(ORDERBUTTON())
-    bot.add_view(BUTTON2())
-    bot.add_view(BUTTON1())
+    bot.add_view(ORDERBUTTON(bot))
+    bot.add_view(BUTTON2(bot))
+    bot.add_view(BUTTON1(bot))
+
 
 @bot.event
 async def on_message(message):
     if message.content.startswith(f"<@!{bot.user.id}>") and len(message.content) == len(f"<@!{bot.user.id}>"):
-        await message.channel.send(f'my default prefix is `!` or <@!{bot.user.id}>')
+        await message.channel.send(f'my default prefix is `%` or <@!{bot.user.id}>')
     await bot.process_commands(message)
 
 

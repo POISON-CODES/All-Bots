@@ -32,8 +32,8 @@ class ModMail(commands.Cog):
               #               return
 
               embed = discord.Embed(title = "ModMail.", description = f"You are sending this message to **{guild.name}**.\n"
-                                                                      f'React with ✅ to Confirm.\n'
-                                                                      f'React with ❎ to Cancel.', color = discord.Color(0x000000))
+                                                                      f'React with âœ… to Confirm.\n'
+                                                                      f'React with âŽ to Cancel.', color = discord.Color(0x000000))
               if not guild.icon is None:
                      embed.set_author(name = guild.name, icon_url = guild.icon.url)
                      embed.set_thumbnail(url = guild.icon)
@@ -47,7 +47,7 @@ class ModMail(commands.Cog):
                      msg = await message.channel.send(embed = embed)
               except:
                      return
-              reactions = ['✅','❎']
+              reactions = ['âœ…','âŽ']
               for reaction in reactions:
                      await msg.add_reaction(reaction)
 
@@ -56,12 +56,12 @@ class ModMail(commands.Cog):
                             return str(reaction.emoji) in reactions and user != self.bot.user
 
                      reaction, user = await self.bot.wait_for('reaction_add', check = check, timeout = 600)
-                     if str(reaction.emoji) == '❎':
+                     if str(reaction.emoji) == 'âŽ':
                             await msg.delete()
                             await message.channel.send('Aborted')
                             return
 
-                     if str(reaction.emoji) == '✅':
+                     if str(reaction.emoji) == 'âœ…':
                             channel = discord.utils.get(guild.text_channels, name=f'{str(message.author.id)}')
                             if channel == None:
                                    channel = await guild.create_text_channel(name = str(message.author.id))
