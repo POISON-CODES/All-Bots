@@ -47,7 +47,7 @@ class ModMail(commands.Cog):
                      msg = await message.channel.send(embed = embed)
               except:
                      return
-              reactions = ['âœ…','âŽ']
+              reactions = ['✅','❎']
               for reaction in reactions:
                      await msg.add_reaction(reaction)
 
@@ -56,12 +56,12 @@ class ModMail(commands.Cog):
                             return str(reaction.emoji) in reactions and user != self.bot.user
 
                      reaction, user = await self.bot.wait_for('reaction_add', check = check, timeout = 600)
-                     if str(reaction.emoji) == 'âŽ':
+                     if str(reaction.emoji) == '❎':
                             await msg.delete()
                             await message.channel.send('Aborted')
                             return
 
-                     if str(reaction.emoji) == 'âœ…':
+                     if str(reaction.emoji) == '✅':
                             channel = discord.utils.get(guild.text_channels, name=f'{str(message.author.id)}')
                             if channel == None:
                                    channel = await guild.create_text_channel(name = str(message.author.id))
@@ -79,34 +79,34 @@ class ModMail(commands.Cog):
                                                  }
                                                  await channel.edit(overwrites=overwrites)
                             poison = self.bot.get_user(int(cfg.OWNER))       
-                            # try:
-                            poison = self.bot.get_user(int(cfg.OWNER))
-                            embed = discord.Embed(title = 'ModMail', color = discord.Color(0x00FF00))
-                            embed.timestamp = discord.utils.utcnow()
-                            embed.description=(f'{message.content}')
-                            embed.set_author(name = message.author.name, icon_url=message.author.avatar.url)
-                            if not guild.icon is None:
-                                   embed.set_thumbnail(url=guild.icon)
-                            embed.set_footer(text = f'Bot Developed by {poison.name} | {poison.id}', icon_url = poison.display_avatar.url)
-
-                            await channel.send(embed = embed)
-
-                            embed = discord.Embed(title = 'Message Sent', color = discord.Color(0x00FF00))
-                            embed.description = (f'Your message was successfully sent to **{guild.name}**. Please wait for further response.')
-                            if not guild.icon is None:
-                                   embed.set_author(name = f'{guild.name} | {guild.id}', icon_url = guild.icon.url)
-                            else:
-                                   embed.set_author(name = f'{guild.name} | {guild.id}')
-                            embed.set_footer(text = f'Bot developed by {poison.name} | {poison.id}', icon_url = poison.display_avatar.url)
-                            embed.timestamp = discord.utils.utcnow()
                             try:
-                                   await message.channel.send(embed = embed)
-                                   await msg.delete()
-                                   return
-                            except:
-                                   return
+                                   poison = self.bot.get_user(int(cfg.OWNER))
+                                   embed = discord.Embed(title = 'ModMail', color = discord.Color(0x00FF00))
+                                   embed.timestamp = discord.utils.utcnow()
+                                   embed.description=(f'{message.content}')
+                                   embed.set_author(name = message.author.name, icon_url=message.author.avatar.url)
+                                   if not guild.icon is None:
+                                          embed.set_thumbnail(url=guild.icon)
+                                   embed.set_footer(text = f'Bot Developed by {poison.name} | {poison.id}', icon_url = poison.display_avatar.url)
 
-                            # except:
+                                   await channel.send(embed = embed)
+
+                                   embed = discord.Embed(title = 'Message Sent', color = discord.Color(0x00FF00))
+                                   embed.description = (f'Your message was successfully sent to **{guild.name}**. Please wait for further response.')
+                                   if not guild.icon is None:
+                                          embed.set_author(name = f'{guild.name} | {guild.id}', icon_url = guild.icon.url)
+                                   else:
+                                          embed.set_author(name = f'{guild.name} | {guild.id}')
+                                   embed.set_footer(text = f'Bot developed by {poison.name} | {poison.id}', icon_url = poison.display_avatar.url)
+                                   embed.timestamp = discord.utils.utcnow()
+                                   try:
+                                          await message.channel.send(embed = embed)
+                                          await msg.delete()
+                                          return
+                                   except:
+                                          return
+
+                            except:
                                    embed = discord.Embed(title = 'Error!!', description = f'Sending Your message Failed. Please Contant the moderators and inform <@{poison.id}> about the flaw.', color = discord.Color(0xFF1100))
                                    embed.timestamp = discord.utils.utcnow()
                                    try:

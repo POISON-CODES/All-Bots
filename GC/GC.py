@@ -8,6 +8,7 @@ from cogs.order import *
 from cogs.buttons import *
 
 
+
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('%'), intents=intents)
 bot.case_insensitive = True

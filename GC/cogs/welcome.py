@@ -24,9 +24,16 @@ class WELCOME(commands.Cog):
               await channel.send(embed = embed)
 
 
-       # @commands.Cog.listener()
-       # async def on_member_remove(self, member: discord.Member):
-       #        description = ()
+       @commands.Cog.listener()
+       async def on_member_remove(self, member: discord.Member):
+              description = (f'**{member.name}** just left us.\n'
+                            f"We're now **{len(member.guild.members)}** members.\n")
+              embed = discord.Embed(title = 'Farewell', description = description, color = discord.Color(0xFFFFFF))
+              embed.timestamp = discord.utils.utcnow()
+              embed.set_footer(text = f'{member.guild.name} | {member.guild.id}', icon_url = member.guild.icon.url)
+
+              channel = member.guild.get_channel(cfg.FAREWELL)
+              await channel.send(embed = embed)
 
 def setup(bot):
        bot.add_cog(WELCOME(bot))
