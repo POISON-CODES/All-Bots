@@ -29,22 +29,26 @@ class BUTTON1(discord.ui.View):
               embed.timestamp = discord.utils.utcnow()
               embed.set_author(name =interaction.user.name, icon_url=interaction.user.avatar.url)
               
-              async for message in interaction.channel.history():
-                     if message.author.id == int(cfg.BOT):
-                            await message.delete()
+              # async for message in interaction.channel.history():
+              #        if message.author.id == int(cfg.BOT):
+              #               await message.delete()
               view=BUTTON2(self.bot)
+              await interaction.message.delete()
               msg = await interaction.channel.send(embed = embed, view = view)
+              await msg.pin()
 
               data["CURRENT"][str(client.id)] = interaction.user.id
 
               with open('cogs/orders.json', 'w') as f:
                      json.dump(data, f, indent = 4)
 
-              embed.set_thumbnail(url=interaction.guild.icon)
+              embed.set_thumbnail(url=interaction.guild.icon.url)
               embed.color = discord.Color(0x00FF00)
               embed.add_field(name = 'Link',value = f'[You can view the message here]({msg.jump_url})')
-
-              await client.send(embed=embed)
+              try:
+                     await client.send(embed=embed)
+              except:
+                     await interaction.channel.send(content=f"{client.mention}", embed=embed)
               await interaction.channel.edit(name=f'claimed-{client.name}')
 
               overwrites = {
@@ -152,12 +156,7 @@ class BUTTON2(discord.ui.View):
        @discord.ui.button(label='Unclaim', style=discord.ButtonStyle.blurple, custom_id='unclaim:blurple')
        async def unclaim(self, button = discord.ui.Button, interaction = discord.Interaction):
               await interaction.message.delete()
-              embed = discord.Embed(title=f'Place Your Order', description=f'Place an order here.\nType `%procedure` to know the Procedure.\n`%price` to know basic price chart.\n`%form` to fill the form for our artists to understand your idea.', color = discord.Color(0x2C2F33))
-              embed.set_footer(text = f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
-              embed.set_thumbnail(url=interaction.guild.icon)
-              embed.timestamp = discord.utils.utcnow()
-              view=BUTTON1(self.bot)
-              await interaction.channel.send(content = f'<@&{cfg.ARTISTS}>',embed = embed, view = view)
+              
 
               with open('cogs/orders.json', 'r') as f:
                      data= json.load(f)
@@ -167,15 +166,14 @@ class BUTTON2(discord.ui.View):
               with open('cogs/orders.json', 'w') as f:
                      json.dump(data, f, indent = 4)
 
-              client = await interaction.guild.get_member(int(data['CHANNELS'][str(interaction.channel.id)]))
+              client = discord.utils.get(interaction.guild.members, id =(int(data['CHANNELS'][str(interaction.channel.id)])))
 
-              await interaction.channel.edit(name=f'unclaimed-{client.name}')
               artists = interaction.guild.get_role(int(cfg.ARTISTS))
 
               overwrites = {
-                     interaction.user: discord.PermissionOverwrite(
-                            send_messages=True,
-                            view_channel=True,
+                     interaction.guild.default_role: discord.PermissionOverwrite(
+                            send_messages=False,
+                            view_channel=False,
                             manage_messages=False,
                             manage_channels=False,
                             manage_permissions=False
@@ -183,20 +181,27 @@ class BUTTON2(discord.ui.View):
                      artists: discord.PermissionOverwrite(
                             send_messages=True,
                             view_channel=True,
+                            read_messages=True,
                             manage_messages=False,
                             manage_channels=False,
                             manage_permissions=False
                      ),
-                     interaction.guild.default_role: discord.PermissionOverwrite(
-                            send_messages=False,
-                            view_channel=False,
+                     client: discord.PermissionOverwrite(
+                            send_messages=True,
+                            view_channel=True,
                             manage_messages=False,
                             manage_channels=False,
                             manage_permissions=False
                      )
-
               }
-              await interaction.channel.edit(overwrites=overwrites)
+              await interaction.channel.edit(name=f"unclaimed-{client.name}",overwrites=overwrites)
+              embed = discord.Embed(title=f'Place Your Order', description=f'Place an order here.\nType `%procedure` to know the Procedure.\n`%price` to know basic price chart.\n`%form` to fill the form for our artists to understand your idea.', color = discord.Color(0x2C2F33))
+              embed.set_footer(text = f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
+              embed.set_thumbnail(url=interaction.guild.icon)
+              embed.timestamp = discord.utils.utcnow()
+              view=BUTTON1(self.bot)
+              msg=await interaction.channel.send(content = f'<@&{cfg.ARTISTS}>',embed = embed, view = view)
+              await msg.pin()
 
 
        @discord.ui.button(label='Reject', style=discord.ButtonStyle.blurple, custom_id = 'reject2:blurple')
@@ -272,6 +277,7 @@ class Confirmation(discord.ui.View):
               else:
                      await interaction.response.send_message(f'You are not the artist. Please ask {self.artist.mention} to complete the proceduer.', ephemeral = True)
               await interaction.message.delete()
+              interaction_channel=interaction.channel
               self.embed.set_author(name=f'#{self.number}')
               channel = self.bot.get_channel(int(cfg.COMPLETED))
               await channel.send(embed= self.embed)
@@ -282,14 +288,14 @@ class Confirmation(discord.ui.View):
                      send_messages=False
               )
               }
-              await channel.edit(overwrites=overwrites)
+              await interaction.channel.edit(overwrites=overwrites)
               await interaction.channel.edit(name=f'completed-{self.client.name}')
 
               with open('cogs/orders.json', 'r') as f:
                      data= json.load(f)
 
               data['CURRENT'].pop(str(self.client.id))        
-              data['CHANNELS'].pop(str(channel.id))       
+              data['CHANNELS'].pop(str(interaction_channel.id))       
               
               data['TOTALORDERS'] = str(int(data['TOTALORDERS'])+1)
               try:
@@ -304,8 +310,8 @@ class Confirmation(discord.ui.View):
               def rate(rating):
                      rating.author.id == self.client.id and rating.isdigit() and rating.channel.id==interaction.channel.id
               channel = interaction.channel
-              await channel.send(f"How would you rate {self.artist.mention}'s work on a scale of 1-10?")
-              rating = await self.bot.wait_for('message', check = rate())
+              # await channel.send(f"How would you rate {self.artist.mention}'s work on a scale of 1-10?")
+              # rating = await self.bot.wait_for('message', check = rate())
 
 
        
@@ -330,12 +336,16 @@ class Confirmation(discord.ui.View):
               embed = discord.Embed(title ='ORDER CLAIMED', description = f'{self.client.mention} your order was accepted by our artist - {interaction.user.mention}.', color = discord.Color(0x2C2F33))
               embed.timestamp = discord.utils.utcnow()
               embed.set_author(name =interaction.user.name, icon_url=interaction.user.avatar.url)
+              embed.set_footer(text = f'Regards, Team {interaction.guild.name}')
               
-              async for message in interaction.channel.history():
-                     if message.author.id == int(cfg.BOT):
-                            await message.delete()
+              # async for message in interaction.channel.history():
+              #        if message.author.id == int(cfg.BOT):
+              #               await message.delete()
+              await interaction.message.delete()
               view=BUTTON2(self.bot)
               msg = await interaction.channel.send(embed = embed, view = view)
+              await msg.pin()
+              
 
               # data["CURRENT"][str(client.id)] = interaction.user.id
 
@@ -359,23 +369,23 @@ async def receipt(bot, interaction, client, artist):
        await channel.send(f'{artist.mention} Enter Payment Method. (Paytm/Gpay/Invites/etc)')
        
        payment = await bot.wait_for('message',check = check, timeout=None)
-       print(payment.content)
+       #print(payment.content)
        await channel.send(f'Enter work type. (PFP/Banner/Thumbnail/etc)')
 
        work = await bot.wait_for('message', check = check, timeout=None)
-       print(work.content)
+       #print(work.content)
        await channel.send(f'Enter Style. (Vector art/etc.)')
 
        style = await bot.wait_for('message', check=check, timeout=None)
-       print(style.content)
+       #print(style.content)
        await channel.send(f'Enter Price for the design. (Invites or Money)')
        
        price = await bot.wait_for('message', check=check, timeout=None)
-       print(price.content)
+       #print(price.content)
        await channel.send(f'Enter **LINK** for the design.')
 
        link = await bot.wait_for('message', check=check, timeout=None)
-       print(link.content)
+       #print(link.content)
        embed = discord.Embed(title = 'Order Receipt', description = f'This is a receipt for {work.content} ordered by {client.mention} which was completed by {artist.mention}.', color = discord.Color(0x00FF00))
        embed.set_footer(text = f'{interaction.user.name} | {interaction.user.id}', icon_url = interaction.user.avatar.url)
        embed.timestamp = discord.utils.utcnow()
@@ -390,7 +400,8 @@ async def receipt(bot, interaction, client, artist):
        try:
               embed.set_image(url = link.content)
        except:
-              pass
+              await link.channel.send(f'Invalid link. Try again')
+              return
        
        with open('cogs/orders.json', 'r') as f:
               data= json.load(f)
@@ -417,9 +428,9 @@ async def receipt(bot, interaction, client, artist):
                      bool = True
 
        view = Confirmation(artist, client, bot, embed, ordernum) 
-       async for message in interaction.channel.history():
-                     if message.author.id == int(cfg.BOT):
-                            await message.delete()
+       # async for message in interaction.channel.history():
+       #               if message.author.id == int(cfg.BOT):
+       #                      await message.delete()
        await channel.send(embed = embed, view= view)
 
        #############################################

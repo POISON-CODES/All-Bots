@@ -13,10 +13,18 @@ class TICKET(discord.ui.View):
        async def ticketopen(self, button = discord.ui.Button, interaction = discord.Interaction):
               category = discord.utils.get(interaction.guild.categories, id=int(cfg.TICKET))
               ticket = await category.create_text_channel(name = f'ticket-{interaction.user.name}')
+              support = discord.utils.get(interaction.guild.roles, id = int(cfg.SUPPORT))
               overwrites = {
+              support: discord.PermissionOverwrite(
+                     view_channel=True,
+                     send_messages=True,
+                     manage_channels=True,
+                     manage_messages=True,
+                     manage_permissions=True
+              ),
               interaction.guild.default_role: discord.PermissionOverwrite(
-              read_messages=False,
-              view_channel=False,
+                     read_messages=False,
+                     view_channel=False
               ),
               interaction.user: discord.PermissionOverwrite(
                      read_messages=True,
@@ -30,8 +38,8 @@ class TICKET(discord.ui.View):
               embed.timestamp = discord.utils.utcnow()
               embed.set_footer(text = f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
               view=CLOSE()
-              await ticket.send(content = f'{interaction.user.mention} | <@&{int(cfg.SUPPORT)}>',embed= embed, view = view)
-
+              msg = await ticket.send(content = f'{interaction.user.mention} | <@&{int(cfg.SUPPORT)}>',embed= embed, view = view)
+              await msg.pin()
 
 class Ticket(commands.Cog):
        def __init__(self, bot):

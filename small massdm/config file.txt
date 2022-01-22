@@ -1,0 +1,6 @@
+python3 <file> token <number of bots> <log channel> <prefix> <boolean> <max_members> <bot number>
+
+
+Enistiate
+python3 ./bots/"small massdm"/main.py ODkzNzk0NjAxMzU2MzgyMjE5.YVgpFg.Il0ZoDFoF2RMqX9n8Wo6Cg1voF8 2 930333075764834314 "&" True 160 0 &
+python3 ./bots/"small massdm"/main.py ODkzNzk0NjI2ODM2NzkxMzc2.YVgpHA.kSrORsrcL0uKp2gXeY16fGOMEN8 2 930333075764834314 "&" False 160 1 &

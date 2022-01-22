@@ -19,7 +19,7 @@ class WELCOME(commands.Cog):
               embed = discord.Embed(title = 'Welcome', description = description, color = discord.Color(0xFFFFFF))
               embed.timestamp = discord.utils.utcnow()
               embed.set_footer(text = f'{member.guild.name} | {member.guild.id}', icon_url = member.guild.icon.url)
-
+              embed.set_thumbnail(url=member.guild.icon.url)
               channel = member.guild.get_channel(cfg.WELCOME)
               await channel.send(embed = embed)
 
