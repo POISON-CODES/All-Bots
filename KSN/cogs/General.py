@@ -33,7 +33,7 @@ class General(commands.Cog):
 
        @commands.command(aliases=['bi', 'abb', 'aboutbot'])
        async def botinfo(self, ctx):
-              embed= discord.Embed(title ='About BOT', description=f'Bot Developed by <@724283255959978057> for **{ctx.guild.name}** using the **Discord.py** Library', color=discord.Color(0xFFE100))
+              embed= discord.Embed(title ='About BOT', description=f'{self.bot.description}', color=discord.Color(0xFFE100))
               embed.add_field(name='API VERSION', value=f"{discord.__version__}", inline=True)
               embed.add_field(name='\u200b', value='\u200b', inline=True)
               embed.add_field(name='BOT VERSION', value=f'v1.0.0', inline=True)
@@ -57,11 +57,12 @@ class General(commands.Cog):
        async def serverinfo(self, ctx):
               desc=''
               embed=discord.Embed(title ='About Server', description=desc, color=discord.Color(0xFFE100))
-              embed.add_field(name ='Owner', description=ctx.guild.owner.mention, inline=False)
+              embed.add_field(name ='Owner', value=ctx.guild.owner.mention, inline=False)
+              # embed.add_field(name='\u200b', value='\u200b', inline=True)
+              embed.add_field(name='Members', value=len(ctx.guild.members), inline=True)
               embed.add_field(name='\u200b', value='\u200b', inline=True)
-              embed.add_field(name='Members', description=len(ctx.guild.members))
-              embed.add_field(name='Bots', description=sum(i.bot for i in ctx.guild.members))
-              embed.add_field(name='\u200b', value='\u200b', inline=True)
+              embed.add_field(name='Bots', value=sum(i.bot for i in ctx.guild.members), inline=True)
+              # embed.add_field(name='\u200b', value='\u200b', inline=True)
               tlocked=0
               for channel in ctx.guild.text_channels:
                      if channel.permissions_for(ctx.author).view_channel==True:
@@ -74,7 +75,7 @@ class General(commands.Cog):
                             continue
                      else:
                             vlocked+=1
-              embed.add_field(name='Channels', description=f'Text Channels: {len(ctx.guild.text_channels)} ({tlocked} locked)\nVoice Channels: {len(ctx.guild.voice_channels)} ({vlocked} locked.)', inline=True)
+              embed.add_field(name='Channels', value=f'Text Channels: {len(ctx.guild.text_channels)} ({tlocked} locked)\nVoice Channels: {len(ctx.guild.voice_channels)} ({vlocked} locked.)', inline=True)
               embed.set_footer(text = f'{self.bot.user.name} | {self.bot.user.id}', icon_url=self.bot.user.avatar.url)
               embed.set_thumbnail(url=ctx.guild.icon)
               embed.timestamp = discord.utils.utcnow()
@@ -152,8 +153,9 @@ class Nothing(discord.ui.Select):
                      for command in filtered:
                             new=f'<a:redstar:900703292986912788> {command.name}  --> '
                             value=value+new
-                            new=f'{command.help}\n\n' or '``No description Yet.``\n\n'
-                            value=value+new
+                            new=f'{command.help}\n\n' or '``No description Yet.``\n'
+                            value=value+new+f'``aliases={command.aliases}``\n\n'
+                            value=value.replace('\'', '')
               embed= discord.Embed(description=f'{cog.qualified_name}\n'+value, color=discord.Color(0xFFFFFF))
               embed.timestamp = discord.utils.utcnow()
               embed.set_footer(text=f'Requested by {classer.context.author.name}')

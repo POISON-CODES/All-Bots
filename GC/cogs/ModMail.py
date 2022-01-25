@@ -32,8 +32,8 @@ class ModMail(commands.Cog):
               #               return
 
               embed = discord.Embed(title = "ModMail.", description = f"You are sending this message to **{guild.name}**.\n"
-                                                                      f'React with âœ… to Confirm.\n'
-                                                                      f'React with âŽ to Cancel.', color = discord.Color(0x000000))
+                                                                      f'React with ✅ to Confirm.\n'
+                                                                      f'React with ❎ to Cancel.', color = discord.Color(0x000000))
               if not guild.icon is None:
                      embed.set_author(name = guild.name, icon_url = guild.icon.url)
                      embed.set_thumbnail(url = guild.icon)

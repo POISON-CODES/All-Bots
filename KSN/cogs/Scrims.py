@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import asyncio
+import cogs.config as cfg
 
 class Scrims(commands.Cog):
        def __init__(self, bot):
@@ -9,15 +10,15 @@ class Scrims(commands.Cog):
 
        @commands.command(aliases=['scrimsss', 'sss', 'post'], help='Posts Scrim ss in specified channel')
        async def results(self, ctx, channel: discord.TextChannel):
-              role= ctx.guild.get_role(837590113378369536)
+              role= ctx.guild.get_role(int(cfg.SCRIMSROLE))
               embed=discord.Embed(color=discord.Color(0xFFE100))
               if not role in ctx.author.roles:
                      embed.title=f'Missing Roles'
-                     embed.description='You do not have <@&837590113378369536> role to use this command.'
+                     embed.description=f'You do not have <@&{cfg.SCRIMSROLE}> role to use this command.'
                      await ctx.send(embed = embed)
                      return
               
-              await ctx.send('Enter title [ex: ``Kinsmen Beta vs Kinsmen Alpha (2-1)``]')
+              await ctx.send('Enter title [ex: ``Team Beta vs Team Alpha (2-1)``]')
               def check(message):
                      return message.author==ctx.author and message.channel == ctx.channel
               try:
@@ -59,19 +60,5 @@ class Scrims(commands.Cog):
               except asyncio.TimeoutError:
                      await ctx.send('Timeout!')
                      return
-
-       async def send_chan(self, ctx, embds: list):
-              def check(message):
-                     return message.author==ctx.author and message.channel == ctx.channel
-              await ctx.send('Mention Channel to send message to.')
-              msg=await self.bot.wait_for('message', check=check, timeout=300)
-              if msg.isdigit():
-                     chan=ctx.guild.get_channel(int(msg))
-              if chan==None:
-                     await ctx.send('Could not Find channel. Please retry.')
-                     return
-
-              await chan.send(embeds=embds)
-
 def setup(bot):
        bot.add_cog(Scrims(bot))
