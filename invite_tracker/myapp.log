@@ -1,0 +1,1784 @@
+09/27/2021 08:20:39 PM Started
+09/27/2021 08:20:39 PM Finished
+09/27/2021 08:22:09 PM Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:22:19 PM Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:22:29 PM Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:22:39 PM Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:22:49 PM Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:22:59 PM Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:09 PM Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:19 PM Shard ID None heartbeat blocked for more than 80 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:29 PM Shard ID None heartbeat blocked for more than 90 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:39 PM Shard ID None heartbeat blocked for more than 100 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:49 PM Shard ID None heartbeat blocked for more than 110 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:23:59 PM Shard ID None heartbeat blocked for more than 120 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:09 PM Shard ID None heartbeat blocked for more than 130 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:19 PM Shard ID None heartbeat blocked for more than 140 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:29 PM Shard ID None heartbeat blocked for more than 150 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:39 PM Shard ID None heartbeat blocked for more than 160 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:49 PM Shard ID None heartbeat blocked for more than 170 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:24:59 PM Shard ID None heartbeat blocked for more than 180 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:09 PM Shard ID None heartbeat blocked for more than 190 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:19 PM Shard ID None heartbeat blocked for more than 200 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:29 PM Shard ID None heartbeat blocked for more than 210 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:39 PM Shard ID None heartbeat blocked for more than 220 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:49 PM Shard ID None heartbeat blocked for more than 230 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:25:59 PM Shard ID None heartbeat blocked for more than 240 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:09 PM Shard ID None heartbeat blocked for more than 250 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:19 PM Shard ID None heartbeat blocked for more than 260 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:29 PM Shard ID None heartbeat blocked for more than 270 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:39 PM Shard ID None heartbeat blocked for more than 280 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:49 PM Shard ID None heartbeat blocked for more than 290 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:26:59 PM Shard ID None heartbeat blocked for more than 300 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:09 PM Shard ID None heartbeat blocked for more than 310 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:19 PM Shard ID None heartbeat blocked for more than 320 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:29 PM Shard ID None heartbeat blocked for more than 330 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:39 PM Shard ID None heartbeat blocked for more than 340 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:49 PM Shard ID None heartbeat blocked for more than 350 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:27:59 PM Shard ID None heartbeat blocked for more than 360 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:09 PM Shard ID None heartbeat blocked for more than 370 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:19 PM Shard ID None heartbeat blocked for more than 380 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:29 PM Shard ID None heartbeat blocked for more than 390 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:39 PM Shard ID None heartbeat blocked for more than 400 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:49 PM Shard ID None heartbeat blocked for more than 410 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 93, in configure
+    cursor.execute(f'INSERT INTO invitecodes (inviter_id, invite_code, uses) VALUES ({invite.inviter.id}, \'{invite.code}\', {invite.uses})')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:28:59 PM Shard ID None heartbeat blocked for more than 420 seconds.
+Loop thread traceback (most recent call last):
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 318, in <module>
+    bot.run('ODgzMjMyOTcwNDE1MTUzMTcz.YTG8zQ.CoVQrRswbBi1VCjNlJ5gygiIVcM')
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 713, in run
+    loop.run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\windows_events.py", line 316, in run_forever
+    super().run_forever()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 596, in run_forever
+    self._run_once()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 1890, in _run_once
+    handle._run()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 70, in on_message
+    await bot.process_commands(message)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 976, in process_commands
+    await self.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\bot.py", line 939, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 863, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\discord\ext\commands\core.py", line 85, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "f:\aman\bot\invite_tracker\invite-tracker-mtb\invite_tracker.py", line 94, in configure
+    cnx.commit()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1229, in commit
+    self._execute_query("COMMIT")
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 1248, in _execute_query
+    self.cmd_query(query)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\connection.py", line 501, in _send_cmd
+    return self._socket.recv()
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\site-packages\mysql\connector\network.py", line 246, in recv_plain
+    chunk = self.sock.recv(4 - packet_len)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1226, in recv
+    return self.read(buflen)
+  File "C:\Users\anchal\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1101, in read
+    return self._sslobj.read(len)
+
+09/27/2021 08:29:07 PM Timed out receiving packet. Attempting a reconnect.
+09/27/2021 08:29:07 PM Got a request to RESUME the websocket.
+09/27/2021 08:29:07 PM Shard ID None has sent the RESUME payload.
+09/27/2021 08:29:08 PM Shard ID None session has been invalidated.
+09/27/2021 08:29:08 PM Got a request to IDENTIFY the websocket.
+09/27/2021 08:29:13 PM Shard ID None has sent the IDENTIFY payload.
+09/27/2021 08:29:14 PM Shard ID None has connected to Gateway: ["gateway-prd-main-2p8b",{"micros":76990,"calls":["discord-sessions-green-prd-2-38",{"micros":72831,"calls":["start_session",{"micros":30921,"calls":["api-prd-main-p375",{"micros":27607,"calls":["get_user",{"micros":4302},"add_authorized_ip",{"micros":1457},"get_guilds",{"micros":5405},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":35093,"calls":[]}]}]}] (Session ID: db94812787badac36c297d3d4608bf84).
+09/27/2021 08:29:16 PM Started
+09/27/2021 08:29:16 PM Finished
+09/27/2021 09:46:27 PM Got a request to RESUME the websocket.
+09/27/2021 09:46:27 PM Shard ID None has sent the RESUME payload.
+09/27/2021 09:46:27 PM Shard ID None has successfully RESUMED session db94812787badac36c297d3d4608bf84 under trace ["gateway-prd-main-c894",{"micros":620,"calls":["discord-sessions-green-prd-2-38",{"micros":31}]}].
