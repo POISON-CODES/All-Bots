@@ -4,8 +4,7 @@ import time
 import cogs.config as cfg
 import json
 from cogs.ticket import *
-from cogs.order import *
-from cogs.buttons import *
+from cogs.ordering import *
 
 class EmbedHelpCommand(commands.HelpCommand):
     """This is an example of a HelpCommand that utilizes embeds.
@@ -77,7 +76,7 @@ class EmbedHelpCommand(commands.HelpCommand):
     send_command_help = send_group_help
 
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('%'), intents=intents, help_command=EmbedHelpCommand())
+bot = commands.Bot(case_insensitive=True, command_prefix=commands.when_mentioned_or('%'), intents=intents, help_command=EmbedHelpCommand())
 bot.case_insensitive = True
 
 
@@ -87,10 +86,7 @@ async def on_ready():
     print(f'{bot.user.id}')
     bot.add_view(TICKET())
     bot.add_view(CLOSE())
-    bot.add_view(ORDERBUTTON(bot))
-    bot.add_view(BUTTON2(bot))
-    bot.add_view(BUTTON1(bot))
-
+    bot.add_view(Buttons())
 
 @bot.event
 async def on_message(message):
@@ -165,7 +161,7 @@ class Nothing(discord.ui.Select):
               
               classer=self.bot.help_command
               classer.context=self.ctx
-              commands_list = await classer.filter_commands(commands=commands_list, sort=True)
+              commands_list = await classer.filter_commands(commands=commands_list, sort=False)
               filtered=await custom_filter(commands=commands_list)
               value=''
               self.bot=self.ctx.bot
@@ -175,8 +171,8 @@ class Nothing(discord.ui.Select):
                      for command in filtered:
                             new=f'🎟️ {command.name}  --> '
                             value=value+new
-                            new=f'{command.help}\n\n' or '``No description Yet.``\n'
-                            value=value+new+f'``aliases={command.aliases}``\n\n'
+                            new=f'{command.help}\n\n' or '``No description Yet.``'
+                            value=value+new+f'``aliases={command.aliases}``\n'
                             value=value.replace('\'', '')
               embed= discord.Embed(description=f'{cog.qualified_name}\n'+value, color=discord.Color(0xFFFFFF))
               embed.timestamp = discord.utils.utcnow()
@@ -185,39 +181,23 @@ class Nothing(discord.ui.Select):
 
               await interaction.message.edit(embed = embed)
 
-
-
-@bot.event
-async def on_guild_join(guild):
-    data = {}
-    for member in guild.members:
-        data[str(member.id)] = 0
-
-    with open('cogs/values.json', 'r') as f:
-        datajson = json.load(f)
-
-    datajson[str(guild.id)] = data
-
-    with open("cogs/values.json", "w") as f:
-        json.dump(datajson, f, indent=4)
-
-
 initial_extensions = ['jishaku',
-                      f'cogs.ModMail',
-                      f'cogs.ModMailcmds',
-                      f'cogs.ticket',
-                      f'cogs.order',
-                      f'cogs.welcome']
-
-for extension in initial_extensions:
-    try:
-        bot.load_extension(extension)
-        print(f'Loaded {extension}')
-    except:
-        print(f"Couldn't load {extension}")
+                     f'cogs.ModMail',
+                     f'cogs.ModMailcmds',
+                     f'cogs.ticket',
+                     f'cogs.welcome',
+                     f'cogs.ordering']
+                    #   f'cogs.welcome'
 
 # for extension in initial_extensions:
-#        bot.load_extension(extension)
+#     try:
+#         bot.load_extension(extension)
+#         print(f'Loaded {extension}')
+#     except:
+#         print(f"Couldn't load {extension}")
+
+for extension in initial_extensions:
+       bot.load_extension(extension)
 
 
 bot.run(str(cfg.TOKEN))

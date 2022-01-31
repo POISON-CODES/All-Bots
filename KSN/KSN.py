@@ -4,7 +4,7 @@ import cogs.config as cfg
 from cogs.Tickets import *
 
 
-bot=commands.Bot(command_prefix=commands.when_mentioned_or(str(cfg.PREFIX)), intents=discord.Intents.all(), owner_ids=[724283255959978057])
+bot=commands.Bot(case_insensitive=False, command_prefix=commands.when_mentioned_or(str(cfg.PREFIX)), intents=discord.Intents.all(), owner_ids=[724283255959978057])
 
 @bot.event
 async def on_ready():
