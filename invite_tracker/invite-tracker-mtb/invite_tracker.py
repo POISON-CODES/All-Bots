@@ -364,7 +364,7 @@ async def inv(ctx, user: discord.User = None):
     await ctx.send(embed = embed)'''
 
 
-initial_extensions = ['cogs.xp_counter', 'cogs.commands']
+initial_extensions = ['cogs.xp_counter', 'cogs.commands', 'jishaku']
 
 if __name__ == '__main__':
     for extension in initial_extensions:

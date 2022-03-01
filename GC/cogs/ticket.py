@@ -61,8 +61,9 @@ class CLOSE(discord.ui.View):
        @discord.ui.button(label =  'CLOSE', style=discord.ButtonStyle.danger, custom_id = 'CLOSE:RED')
        async def closeticket(self, button = discord.ui.Button, interaction = discord.Interaction):
               await interaction.channel.send(f'This ticket was closed by {interaction.user.mention}')
+              channel=interaction.channel
               time.sleep(10)
-              await interaction.channel.delete()
+              await channel.delete()
 
 def setup(bot):
        bot.add_cog(Ticket(bot))

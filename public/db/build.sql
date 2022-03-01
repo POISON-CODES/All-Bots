@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS prefixes (
+	GUILD_ID integer PRIMARY KEY DEFAULT  0,
+	PRFIX integer DEFAULT '+' 
+);

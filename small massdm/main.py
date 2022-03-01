@@ -33,13 +33,14 @@ async def on_ready():
 @commands.has_permissions(administrator = True)
 async def massdm(ctx, role:discord.Role = None , *, args = None):
        if len(role.members)>max_members:
-              if print_bool == True:
+              if print_bool is True:
                      await ctx.send(f'Members more than {max_members} have the role. Process aborted.')
                      return
+       else:
+              if print_bool == True:
+                     await ctx.send(f'This role has {len(role.members)} members. Started my work.')
 
-       if print_bool == True:
-              await ctx.send(f'This role has {len(role.members)} members.')
-       log =  bot.get_channel(id=log_id)        
+       log =  ctx.guild.get_channel(int(log_id))        
        counter=bot_number
        array=[]
        for mem in role.members:
@@ -75,4 +76,9 @@ async def error(ctx, error):
               await ctx.send(f'The bot is busy and currently running this command. Please wait before you can use this command again.')
               return
        
+initial_extension=['jishaku']
+for extension in initial_extension:
+       bot.load_extension(extension)
+
+
 bot.run(str(token))

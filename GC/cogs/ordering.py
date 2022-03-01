@@ -49,10 +49,12 @@ class Buttons(discord.ui.View):
 
               embed=discord.Embed(title = 'GFX Ticket', description=f'Ticket Opened by {client.mention}\nHelp will be with you shortly.\nCheck pricing and other information by using `%procedure`, `%price`, `%form`.', color=discord.Color(0x2F3136))
               embed.timestamp = discord.utils.utcnow()
-              await channel.send(content=f'{client.mention} |', embed= embed)
+              await channel.send(content=f'{client.mention} | {ticket_supp.mention}', embed= embed)
 
               await interaction.edit_original_message(content=f'Your Ticket has been Opened. Please move on to {channel.mention}')
               db.exec(f'INSERT INTO orders (CHANNEL, CLIENT, ARTIST) VALUES (?, ?, ?)', channel.id, client.id, 0)
+              db.commit()
+              db.commit()
               db.commit()
 
        @discord.ui.button(label = 'VFX', style=discord.ButtonStyle.gray, custom_id='Gray:VFX')
@@ -115,7 +117,7 @@ class Orders(commands.Cog):
               if artist==0:
                      pass
               else:
-                     await ctx.send('This order was already claimed by <@{artist}>', delete_after = 10)
+                     await ctx.send(f'This order was already claimed by <@{artist}>', delete_after = 10)
                      return
 
               artists=ctx.guild.get_role(cfg.ARTISTS)
@@ -393,29 +395,33 @@ Amount : [Example 2 invites/100 Rs./ etc...]```""", inline=False)
               """```Displays the rough pricing for varity of work styles.```"""
               embed = discord.Embed(title = 'Pricing', description = f'Pricing for GFX/VFX\n'
                                                                       f'Note: These pricings may vary depending on your order.', color = discord.Color(0x2F3136))
-              embed.add_field(name ='GFX', value = """GFX:
-1. PFP(ANYTYPE) - ₹50/6 INVITES
-2.NON-POPOUT AVI - ₹30/4 INVITES
-3. POPOUT AVI - ₹40/6 INVITES
-4. DRIP / CHROME AVI - ₹60/8 INVITES
-5.BANNER- ₹100/12 INVITES
-6. HEADER- ₹100/12 INVITES
-7.ROSTER - ₹80/14 INVITES₹
-8. THUMBNAIL(ANY) - ₹60/10 INVITES
-9.CONCEPT LOGO - ₹125/18 INVITES
-10.MASCOT LOGO - ₹100/15 INVITES
-11.POSTER - ₹50/10INVITES 
-12.STATIC OVERLAY- ₹140/20 INVITES 
-13. LINEUP PFPS (PACKS OF 8)- ₹200/20 INVITES 
+              embed.add_field(name ='GFX', value = """3D TEXT- 4invites/25inr
+PFP(ANYTYPE) - 6INVITES/60inr
+NON-POPOUT AVI - 4INVITES/30inr
+POPOUT AVI - 6INVITES/40inr
+DRIP AVI/CHROME TEXT - 10INVITES/60inr
 
-VFX: 
-1. INTRO/OUTRO- ₹150/17 INVITES 
-2. ANIMATED OVERLAY- ₹200/25 INVITES 
-3. ANIMATED LOGO - ₹150/17 INVITES 
-4. MONTAGE EDITING (60SECS) - ₹200
+BANNER- 16INVITES/100inr
+HEADER- 16INVITES/100inr
+ROSTER - 20INVITES/100inr
+THUMBNAIL(ANY) - 12INVITES/80inr
+CONCEPT LOGO - 25 INVITES/150inr
+PRE-MADE MASCOT - 20INVITES/150inr
+POSTER - 15INVITES/80inr
+STATIC OVERLAY- 100inr
+LINEUP PFPS - 5inv/50inr(base)+ 2inv/10inr(for each pfps)
+REVAMP - 40INVITE/400inr
+CUSTOM MASCOT- 300inr
+VECTOR - 750inr
 
-NOTICE: PRICES OF THIS LIST  MAY VARY ACCORDING TO YOUR ORDER""", inline = False)
-              embed.set_footer(text = f'{ctx.guild.name} | {ctx.guild.id}')
+**VFX:** 
+INTRO/OUTRO- 100inr (EACH)
+ANIMATED OVERLAY- 150inr
+ANIMATED LOGO - 20 INVITES/150inr (MUST PROVIDE CONCEPT)
+MONTAGE EDITING (60SECS) - 300inr
+
+NOTICE: PRICES MAY FLUCTUATE THIS LIST IS JUST A APPROX.""", inline = False)
+              embed.set_footer(text = f'{ctx.guild.name} | {ctx.guild.id}', icon_url=ctx.guild.icon.url)
               embed.timestamp= discord.utils.utcnow()
               embed.set_author(name=ctx.guild.name, icon_url=ctx.guild.icon.url)
               await ctx.send(embed = embed)

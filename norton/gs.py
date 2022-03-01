@@ -1794,7 +1794,7 @@ class Close(nextcord.ui.View):
     @nextcord.ui.button(label = "Transcript", style=nextcord.ButtonStyle.red, custom_id='transcript')
     async def tClose(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
         if interaction.user.guild_permissions.administrator is not True:
-            await interaction.channel.send_message('You are missing perms to transcript the channel!',ephemeral=True)
+            await interaction.response.send_message('You are missing perms to transcript the channel!',ephemeral=True)
         else:
             limit=10000
             tz_info = 'UTC'
@@ -2233,7 +2233,7 @@ class Panel4(nextcord.ui.View):
         await interaction.response.send_message("""<a:starwhite:917723116078264330>𝚄𝚂𝙳 ($)
 
 <a:Nitro:917723044292726824>AVI :- 1$
-<a:Nitro:917723044292726824>Concept Logo :- 2$
+<a:Nitro:917723044292726824>Concept Logo :- 5$
 <a:Nitro:917723044292726824>Logo Edit :- 10$ [5 Pieces]
 <a:Nitro:917723044292726824>Discord Banner :- 1$
 <a:Nitro:917723044292726824>Header :- 1$
@@ -2260,7 +2260,7 @@ class Panel4(nextcord.ui.View):
         await interaction.response.send_message("""<a:starwhite:917723116078264330>𝙸𝚗𝚟𝚒𝚝𝚎𝚜
 
 <a:Nitro:917723044292726824>AVI :- 10 Invites
-<a:Nitro:917723044292726824>Concept Logo :- 10 Invites
+<a:Nitro:917723044292726824>Concept Logo :- 20 Invites
 <a:Nitro:917723044292726824>Logo Edit :- 10 Invites [1 Piece]
 <a:Nitro:917723044292726824>Discord Banner :- 10 Invites
 <a:Nitro:917723044292726824>Header :- 10 Invites
@@ -2289,7 +2289,7 @@ class Panel4(nextcord.ui.View):
 
 𝚂𝚒𝚗𝚐𝚕𝚎 𝙱𝚘𝚘𝚜𝚝 <a:heart_white:917722989942947850>
 
-<a:Nitro:917723044292726824> Order any 1 GFX every 10 days
+<a:Nitro:917723044292726824> Order any 1 GFX {except Concept logo and Jersey} every 10 days
 <a:Nitro:917723044292726824> Customised Server Booster role
 <a:Nitro:917723044292726824> Special message in Nitro Boosters
 
@@ -2299,7 +2299,9 @@ class Panel4(nextcord.ui.View):
 <a:Nitro:917723044292726824> Customised Server Booster role
 <a:Nitro:917723044292726824> Special message in Nitro Boosters
 <a:Nitro:917723044292726824> Promotion in Booster Promotion with @here ping
-<a:Nitro:917723044292726824> Customisable Graphics Studio Jersey {Minimum 3 boosts}
+<a:Nitro:917723044292726824> Revamp can be purchased , cooldown is as follows; 
+<a:Nitro:917723044292726824> 2 Boosts - 20 Days cooldown ; 3 Boosts - 15 Days cooldown ; 4 Boosts - 10 Days cooldown
+<a:Nitro:917723044292726824> Customisable Graphics Studio Jersey {Minimum 3 boosts} [Regular Jersey Can be purchased with 2 Boosts]
 """, ephemeral=True)
 
     @nextcord.ui.button(label='4', style=nextcord.ButtonStyle.grey, custom_id='persistent_view:grey')
@@ -2349,6 +2351,177 @@ class Panel4(nextcord.ui.View):
 𝙽𝚘𝚠 𝚊𝚝  10$/- <a:heart_white:917722989942947850>
 """, ephemeral=True)
 
+@client.command(name='drop')
+@commands.has_permissions(administrator=True)
+async def special_drop_command(ctx: commands.Context, channel: nextcord.TextChannel ,*, value):
+        item=value
+        dropper=ctx.author
+        await ctx.message.delete()
+        embed=nextcord.Embed(title ='Mystery  Drop', description=f'A mystery drop has appeared , click on the button to claim it.', color=0x5AFFBB)
+        view=claim_view(dropper, item)
+        embed.set_footer(text=f'Drop Expires in 30 seconds.')
+        view.message=await channel.send(content='<@&934788654772158464>',embed = embed, view=view)
+        await ctx.send(f'Drop started in {channel.mention}')
+
+class claim_view(nextcord.ui.View):
+        def __init__(self, dropper, item):
+                self.dropper = dropper
+                self.item=item
+                super().__init__(timeout=30)
+
+
+        @nextcord.ui.button(label='Claim',style=nextcord.ButtonStyle.green, custom_id='Drop:claim')
+        async def drop_claim(self, button = nextcord.ui.Button, interaction = nextcord.Interaction):
+                embed=interaction.message.embeds[0]
+                embed.set_footer(text=f'Drop claimed by {interaction.user}')
+                for item in self.children:
+                        item.disabled = True
+                await interaction.message.edit(embed=embed, view=self)
+                embed=nextcord.Embed(description=f'{interaction.user.mention} was the first to react and won {self.item}', color=0x5AFFBB)
+                await interaction.message.reply(embed = embed)
+                self.stop()
+                return
+
+        async def on_timeout(self):
+                embed=self.message.embeds[0]
+                for item in self.children:
+                        item.style=nextcord.ButtonStyle.danger
+                        item.disabled = True
+                embed.set_footer(text=f'This Drop Expired.')
+                embed.color=0xFF0000
+                await self.message.edit(embed=embed, view=self)
+                return
+
+@client.command()
+@commands.has_permissions(administrator=True)
+async def adduser(ctx, user: nextcord.Member):
+    
+    try:
+        await ctx.channel.set_permissions(user, view_channel=True, send_messages=True, attach_files=True)
+        embed=nextcord.Embed(description=f'{user.mention} has been added to this channel.', color=nextcord.Color(0x5AFFBB))
+        await ctx.send(embed=embed)
+        await ctx.message.delete()
+    except Exception as e:
+        print(e)
+        
+@client.command(name='reciept_help', aliases=['receipt_help'])
+async def help_for_reciept(ctx):
+    ticketer=nextcord.utils.get(ctx.guild.roles, id=918103952090857482)
+    if not ticketer in ctx.author.roles:
+        await ctx.send('You do not have required role to use this command.', delete_after = 10)
+        return
+    embed= nextcord.Embed(title='__Command__', description=f'Usage:\n`>reciept [reciept no.]%[designer tag]%[Client tag]%[FX Type]%[Payment Method]%[image url]`', color=0x5AFFBB)
+    embed.add_field(
+        name ='__KEY TERMS__', 
+        value=(
+            """Reciept No. - Enter current Reciept number.
+Designer Tag - Tag the Designer
+Client Tag - Tag the Client 
+FX Type - Mention FX Type
+Payment Method - Mention Payment Method
+Image Url - Get Image URL , make sure its in form of GIF if its VFX"""))
+    await ctx.send(embed=embed)
+    await ctx.message.delete()
+
+
+@client.command(name='reciept', aliases=['receipt'])
+async def receipt_command(ctx, *, values):
+    ticketer=nextcord.utils.get(ctx.guild.roles, id=918103952090857482)
+    if not ticketer in ctx.author.roles:
+        await ctx.send('You do not have required role to use this command.', delete_after = 10)
+        return
+
+    values.replace('[', '')
+    values.replace(']', '')
+
+    all=values.split('%')
+    if not len(all)==6:
+        await ctx.send(f'I only found {len(all)} arguments. Please check your arguments.', delete_after = 10)
+        return
+    
+    ticket_num=all[0]
+    designer=all[1]
+    clientt=all[2]
+    fx_type=all[3]
+    method=all[4]
+    url=all[5]
+
+    embed=nextcord.Embed(title=ctx.guild.name, color=0x5AFFBB)
+    embed.description=(
+        f"""Order No. {ticket_num}
+Designer:- {designer}
+Customer:- {clientt}
+Order:- {fx_type}
+Payment Method:- {method}"""
+    )
+    if not url.startswith('http'):
+        await ctx.send('Link Support is only available for links with `http` of `https` standards. Please Try again.')
+        return
+
+    try:
+        embed.set_image(url=url)
+    except:
+        await ctx.send('Couldnt set image.')
+        return
+    
+    embed.set_footer(text=f'Receipt by {ctx.author.name}#{ctx.author.discriminator} | Generated by {ctx.guild.name}', icon_url=ctx.author.avatar.url  if ctx.author.avatar is not None else ctx.guild.icon.url)
+
+    receipt_channel=ctx.guild.get_channel(918104039181414451)
+    view=Confirmation()
+    await ctx.send(embed=embed, view = view)
+    await view.wait()
+
+    if view.value == True:
+        await receipt_channel.send(embed=embed)
+        await ctx.send('Receipt sent')
+        return
+    else:
+        await ctx.send('Receipt not sent..')
+        return
+
+class Confirmation(nextcord.ui.View):
+    def __init__(self):
+        self.value=None
+        super().__init__(timeout=None)
+
+    @nextcord.ui.button(label='Confirm', style=nextcord.ButtonStyle.green)
+    async def confirmation_callback(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
+        self.value = True
+        embed=interaction.message.embeds[0]
+        for item in self.children:
+                item.disabled = True
+        await interaction.message.edit(embed=embed, view=self)
+        self.stop()
+        return
+
+    @nextcord.ui.button(label='Cancel', style=nextcord.ButtonStyle.danger)
+    async def cancellation_callback(self, button: nextcord.ui.Button, interaction: nextcord.Interaction):
+        self.value = False
+        embed=interaction.message.embeds[0]
+        for item in self.children:
+                item.disabled = True
+        await interaction.message.edit(embed=embed, view=self)
+        self.stop()
+        return
+
+    async def on_timeout(self):
+        self.value=False
+        embed=self.message.embeds[0]
+        for item in self.children:
+                item.disabled = True
+        await self.message.edit(embed=embed, view=self)
+        return
+
+
+@client.command()
+@commands.has_permissions(administrator=True)
+async def fm(ctx):
+    await ctx.message.delete()
+    msg=await ctx.channel.history(limit=1, oldest_first=True).flatten()
+    msg=msg[0]
+    embed=nextcord.Embed(description=f'This if the first message of the channel.', color=nextcord.Color(0x5AFFBB))
+    await msg.reply(embed=embed)
+
 class Panel5(nextcord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
@@ -2359,13 +2532,14 @@ class Panel5(nextcord.ui.View):
         chann = await categ.create_text_channel(name=f'bot-ticket-{interaction.user.name}')
         staff=nextcord.utils.get(interaction.guild.roles, id=918103959879700480)
         oth=nextcord.utils.get(interaction.guild.roles, id=918103960710156298)
-        await chann.set_permissions(interaction.user, view_channel=True, send_messages=True)
-        await chann.set_permissions(oth, view_channel=True, send_messages=True)
-        await chann.set_permissions(staff, view_channel=True, send_messages=True)
+        await chann.set_permissions(interaction.user, view_channel=True, send_messages=True, attach_files=True)
+        await chann.set_permissions(oth, view_channel=True, send_messages=True, attach_files=True)
+        await chann.set_permissions(staff, view_channel=True, send_messages=True, attach_files=True)
         await chann.send(f"{interaction.user.mention}")
         view=Close()
-        emb = nextcord.Embed(title=f"Support Needed!", description=f"A ticket opened by **{interaction.user.name}**,\n Server Display name is **{interaction.user.display_name}**\n Support will be with you soon!\n The **Close button** can only be used by staffs with manage messages perms!", color=nextcord.Color(0x5AFFBB) )
-        await chann.send(embed=emb, view=view)
+        embed = nextcord.Embed(title=f"Support Needed!", description=f"A ticket opened by **{interaction.user.name}**,\n Server Display name is **{interaction.user.display_name}**\n Support will be with you soon!\n The **Close button** can only be used by staffs with manage messages perms!", color=0x5AFFBB )
+        await chann.send(embed=embed, view=view)
+        await interaction.response.send_message(f'Ticket has been opened <#{chann.id}>', ephemeral=True)
 
 @client.command()
 @commands.has_permissions(administrator=True)
@@ -2433,15 +2607,7 @@ async def ticketp5(ctx, channel: nextcord.TextChannel):
         await ctx.send("Timeout for responding!")
         return
 
-@client.command()
-@commands.has_permissions(administrator=True)
-async def adduser(ctx, user:nextcord.Member=None):
-    print(f'Testing')
-    try:
-        await ctx.channel.set_permissions(user, view_channel=True, send_messages=True, send_files=True)
-        print(f'worked')
-    except:
-        print('error')
+
 @client.command()
 @commands.has_permissions(administrator=True)
 async def ticketp4(ctx, channel: nextcord.TextChannel):

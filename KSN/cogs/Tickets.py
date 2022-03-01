@@ -114,10 +114,17 @@ class DropDown(discord.ui.View):
                             except AttributeError:
                                    chan=await interaction.guild.create_text_channel(name=f'Moderator-ticket-{interaction.user.name}')
                                    await chan.edit(topic=f'{interaction.user.id}')
+                            
+                            
+                            await chan.edit(overwrites={})
+                            await chan.set_permissions(interaction.guild.default_role, view_channel=False)
+                            await chan.set_permissions(interaction.user, view_channel=True, send_messages=True)
                             await chan.set_permissions(mod, view_channel=True, send_messages=True)
                             await chan.set_permissions(head_mod, view_channel=True, send_messages=True)
                             await chan.set_permissions(admin, view_channel=True, send_messages=True)
-                            embed=discord.Embed(title=f'Partnership', description=f'This Ticket has been opened by {interaction.user.mention} for Moderator queries.', color=discord.Color(0xFFE100))
+                            
+                            
+                            embed=discord.Embed(title=f'Mod Ticket', description=f'This Ticket has been opened by {interaction.user.mention} for Moderator queries.', color=discord.Color(0xFFE100))
                             embed.set_author(name=interaction.user.name, icon_url=interaction.user.avatar.url if interaction.user.avatar.url else None)
                             embed.set_footer(text=f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
                             embed.timestamp = discord.utils.utcnow()
@@ -134,14 +141,21 @@ class DropDown(discord.ui.View):
                                    await chan.edit(topic=f'{interaction.user.id}')
                             except AttributeError:
                                    chan=await interaction.guild.create_text_channel(name=f'Owner-ticket-{interaction.user.name}')
+
+                            await chan.edit(overwrites={})
+                            await chan.set_permissions(interaction.guild.default_role, view_channel=False)
+                            await chan.set_permissions(interaction.user, view_channel=True, send_messages=True)
                             await chan.set_permissions(admin, view_channel=True, send_messages=True)
-                            embed=discord.Embed(title=f'Partnership', description=f'This Ticket has been opened by {interaction.user.mention} for Talking to Owner.', color=discord.Color(0xFFE100))
+                            
+                            embed=discord.Embed(title=f'Owner Ticket', description=f'This Ticket has been opened by {interaction.user.mention} for Talking to Owner.', color=discord.Color(0xFFE100))
                             embed.set_author(name=interaction.user.name, icon_url=interaction.user.avatar.url if interaction.user.avatar.url else None)
                             embed.set_footer(text=f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
                             embed.timestamp = discord.utils.utcnow()
                             embed.set_thumbnail(url=interaction.guild.icon.url)
+                            
                             await chan.send(f'{interaction.user.mention} | {admin.mention}',embed= embed)
                             await interaction.edit_original_message(content=f'<a:KSN_Verified:864195922219892768> Your Ticket has been opened, Please move to {chan.mention}')
+                     
                      except Exception as e:
                             print(e)
               elif str(selected)=='Partnership':
@@ -153,6 +167,9 @@ class DropDown(discord.ui.View):
                             except AttributeError:
                                    chan=await interaction.guild.create_text_channel(name=f'Partnership-ticket-{interaction.user.name}')
                                    await chan.edit(topic=f'{interaction.user.id}')
+                            await chan.edit(overwrites={})
+                            await chan.set_permissions(interaction.guild.default_role, view_channel=False)
+                            await chan.set_permissions(interaction.user, view_channel=True, send_messages=True)
                             await chan.set_permissions(staff, view_channel=True, send_messages=True)
                             embed=discord.Embed(title=f'Partnership', description=f'This Ticket has been opened by {interaction.user.mention} for Partnersip queries.', color=discord.Color(0xFFE100))
                             embed.set_author(name=interaction.user.name, icon_url=interaction.user.avatar.url if interaction.user.avatar.url else None)
@@ -172,10 +189,13 @@ class DropDown(discord.ui.View):
                             except AttributeError:
                                    chan=await interaction.guild.create_text_channel(name=f'CC-ticket-{interaction.user.name}')
                                    await chan.edit(topic=f'{interaction.user.id}')
+                            await chan.edit(overwrites={})
+                            await chan.set_permissions(interaction.guild.default_role, view_channel=False)
+                            await chan.set_permissions(interaction.user, view_channel=True, send_messages=True)
                             await chan.set_permissions(head_mod, view_channel=True, send_messages=True)
                             await chan.set_permissions(admin, view_channel=True, send_messages=True)
                             await chan.set_permissions(leader, view_channel=True, send_messages=True)
-                            embed=discord.Embed(title=f'Partnership', description=f'This Ticket has been opened by {interaction.user.mention} for Content Creator Application', color=discord.Color(0xFFE100))
+                            embed=discord.Embed(title=f'CC Ticket', description=f'This Ticket has been opened by {interaction.user.mention} for Content Creator Application', color=discord.Color(0xFFE100))
                             embed.set_author(name=interaction.user.name, icon_url=interaction.user.avatar.url if interaction.user.avatar.url else None)
                             embed.set_footer(text=f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
                             embed.timestamp = discord.utils.utcnow()
@@ -193,9 +213,12 @@ class DropDown(discord.ui.View):
                             except AttributeError:
                                    chan=await interaction.guild.create_text_channel(name=f'Clips-ticket-{interaction.user.name}')
                                    await chan.edit(topic=f'{interaction.user.id}')
+                            await chan.edit(overwrites={})
+                            await chan.set_permissions(interaction.guild.default_role, view_channel=False)
+                            await chan.set_permissions(interaction.user, view_channel=True, send_messages=True)
                             await chan.set_permissions(head_mod, view_channel=True, send_messages=True)
                             await chan.set_permissions(admin, view_channel=True, send_messages=True)
-                            embed=discord.Embed(title=f'Partnership', description=f'This Ticket has been opened by {interaction.user.mention} for Clips Submission', color=discord.Color(0xFFE100))
+                            embed=discord.Embed(title=f'Clip Submission', description=f'This Ticket has been opened by {interaction.user.mention} for Clips Submission', color=discord.Color(0xFFE100))
                             embed.set_author(name=interaction.user.name, icon_url=interaction.user.avatar.url if interaction.user.avatar.url else None)
                             embed.set_footer(text=f'{interaction.guild.name} | {interaction.guild.id}', icon_url = interaction.guild.icon.url)
                             embed.timestamp = discord.utils.utcnow()
