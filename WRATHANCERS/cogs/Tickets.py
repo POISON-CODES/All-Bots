@@ -1,4 +1,6 @@
 from io import BytesIO
+import time
+
 import discord
 from discord.ext import commands
 
@@ -141,7 +143,18 @@ HOW CAN WE ASSIST YOU""", color=0x2F3136)
                 file = discord.File(buffer, filename='transcript.txt')
                 await ctx.send(file=file)
 
+        @commands.command(name='delete')
+        @commands.has_permissions(manage_channels=True)
+        async def delete_channel(self, ctx):
+                await ctx.send('Deleting channel in 10 seconds.')
+                time.sleep(10)
+                await ctx.channel.delete()
 
+        @commands.command(name='rename')
+        @commands.has_permissions(manage_channels=True)
+        async def rename_channel(self, ctx, *, new_name):
+                await ctx.channel.edit(name=new_name)
+                await ctx.send(f'Channel renamed as {new_name}', delete_after = 10)
 
         
 

@@ -101,6 +101,16 @@ from discord.ext import commands
 import discord
 
 
+@bot.event
+async def on_message(message):
+    if message.content.lower() == 'tag':
+        await message.reply(f"""<a:L_Wing:945953879584038972> **__:Esteem Tags:__** <a:R_Wing:945953894813560832> 
+<a:R_arrow:946275794009853962> ♞𝐖𝐑 么
+<a:R_arrow:946275794009853962> ♘𝐖𝐑 么
+<a:R_arrow:946275794009853962> ♞𝐖𝐑 マ
+<a:R_arrow:946275794009853962> ♘𝐖𝐑 マ""")
+    await bot.process_commands(message)
+
 
 for extension in initial_extensions:
         bot.load_extension(extension)
