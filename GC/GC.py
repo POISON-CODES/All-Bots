@@ -6,6 +6,8 @@ import json
 from cogs.ticket import *
 from cogs.ordering import *
 
+import asyncio
+
 class EmbedHelpCommand(commands.HelpCommand):
     """This is an example of a HelpCommand that utilizes embeds.
     It's pretty basic but it lacks some nuances that people might expect.
@@ -189,15 +191,11 @@ initial_extensions = ['jishaku',
                      f'cogs.ordering']
                     #   f'cogs.welcome'
 
-# for extension in initial_extensions:
-#     try:
-#         bot.load_extension(extension)
-#         print(f'Loaded {extension}')
-#     except:
-#         print(f"Couldn't load {extension}")
+async def setup(bot):
+                for extension in initial_extensions:
+                        await bot.load_extension(extension)
+                        print(f'Loaded {extension}')
+                                
+                await bot.start(token=str(cfg.TOKEN))
 
-for extension in initial_extensions:
-       bot.load_extension(extension)
-
-
-bot.run(str(cfg.TOKEN))
+asyncio.run(setup(bot))

@@ -1,14 +1,165 @@
+from http.client import HTTPException
 import discord
 from discord.ext import commands
 import time
-import cogs.config as cfg
-import sys
+import config as cfg
+import asyncio
+
+from discord.app_commands import AppCommandError
+
+from discord import app_commands
+from typing import Optional
+
+class PartnerView(discord.ui.View):
+       def __init__(self, link):
+              self.link = link
+              super().__init__(timeout=None)
+
+              self.add_item(discord.ui.Button(label= 'Join Server',style=discord.ButtonStyle.link, url=link))
 
 
 class General(commands.Cog):
        def __init__(self, bot):
               self.bot = bot
               super().__init__()
+
+       @app_commands.command(name='say')
+       async def say_command(self, interaction: discord.Interaction, text: str):
+              role=discord.utils.get(interaction.guild.roles, id=967948574354735125)
+              await interaction.response.defer()
+              embed=discord.Embed(color=discord.Color(0xFFE100))
+              if not role in interaction.user.roles:
+                     embed=discord.Embed(color=discord.Color(0xFFE100))
+                     embed.description=f'You do not have {role.mention} role to use this command.'
+                     msg=await interaction.followup.send(embed = embed)
+                     time.sleep(5)
+                     await msg.delete()
+                     return
+
+              await interaction.channel.send(content=text)
+              msg=await interaction.followup.send(content=f'done')
+              await msg.delete()
+
+       @app_commands.command(name='ccpromo')
+       @app_commands.checks.has_role(869810456330645514)
+       @app_commands.describe(link='Link to the Post.')
+       async def cc_promo(self,
+              interaction: discord.Interaction,
+              link: str):
+              channel = interaction.guild.get_channel(968450241080745984)
+              await channel.send(content=f'<@&873071213419831316> Check out new post from {interaction.user.mention}\n{link}')
+
+       @app_commands.command(name='partnership')
+       @app_commands.checks.has_role(894810051401875466)
+       async def partnership(self,
+              interaction: discord.Interaction,
+              name: str,
+              link: str,
+              affiliation_image: Optional[str]=None,
+              description: Optional[str] = None,):
+              embed= discord.Embed(color = discord.Color(0xffd800))
+              embed.title=f'{interaction.guild.name} has Partnered with {name}!'
+              if not description is None:
+                     embed.description=description
+
+              embed.color=0xffd800
+              
+              if not affiliation_image is None:
+                     if not affiliation_image.startswith('http'):
+                            await interaction.response.send_message(content='Image Link needs to start with `http`.', ephemeral=True)
+                            return
+                     embed.set_image(url=affiliation_image)
+
+              channel = interaction.guild.get_channel(892361823783895120)
+              await channel.send(content=f'<@&896683204961005620>', 
+                     embed=embed,
+                     view = PartnerView(link=link))
+
+
+       @app_commands.command(name='embed')
+       @app_commands.describe(body='The Body of the Embed')
+       @app_commands.describe(color='Color of Embed. Needs to start with `0x`, ex: `0x000000`')
+       @app_commands.describe(image='Image displated at the bottom.')
+       @app_commands.describe(footer='Footer of the embed. Timestamp is added by default')
+       @app_commands.describe(thumbnail='Thumbnail of the Embed.')
+       @app_commands.describe(title='Title of the Embed')
+       @app_commands.describe(date_time='Yes to apply, ignore to remove')
+       async def embed_command(self, 
+              interaction: discord.Interaction, 
+              body: str,
+              color: str,
+              image: Optional[str],
+              footer: Optional[str],
+              thumbnail: Optional[str],
+              title: Optional[str],
+              date_time: Optional[str]=None,
+              ):
+              role=discord.utils.get(interaction.guild.roles, id=967948574354735125)
+              await interaction.response.defer(ephemeral=True)
+              embed=discord.Embed(color=discord.Color(0xFFE100))
+              if not role in interaction.user.roles:
+                     embed=discord.Embed(color=discord.Color(0xFFE100))
+                     embed.description=f'You do not have {role.mention} role to use this command.'
+                     msg=await interaction.followup.send(embed = embed)
+                     time.sleep(5)
+                     await msg.delete()
+                     return
+
+              if not color.startswith('0x'):
+                     embed.description='The color needs to start with `0x` example: `0x000000`'
+                     msg=await interaction.followup.send(embed = embed)
+                     time.sleep(5)
+                     await msg.delete()
+                     return
+              
+              color = await commands.ColorConverter().convert(interaction, str(color))
+
+              try:
+                     embed.color=color
+              except:
+                     embed.description=f'Couldnt set color.'
+                     msg=await interaction.followup.send(embed = embed)
+                     time.sleep(5)
+                     await msg.delete()
+                     return
+                     
+              embed.description=body
+              if not image is None:
+                     if not image.startswith('http'):
+                            await interaction.followup.send('Thumbnail link can only start with `http` or `https`')
+                            return
+                     embed.set_image(url=image)
+
+              if not footer is None:
+                     embed.set_footer(text=footer)
+              if not date_time is None:
+                     embed.timestamp= discord.utils.utcnow()
+              if not thumbnail is None:
+                     if not thumbnail.startswith('http'):
+                            await interaction.followup.send('Thumbnail link can only start with `http` or `https`')
+                            return
+                     embed.set_thumbnail(url=thumbnail)
+
+              if not title is None:
+                     embed.title = title
+
+              await interaction.channel.send(embed = embed)
+              msg=await interaction.followup.send(content=f'done')
+
+
+       @commands.command(name='dm')
+       @commands.has_guild_permissions(administrator=True)       
+       async def dm_command(self ,
+              ctx: commands.Context,
+              user: discord.User, 
+              *, message: str
+              ):
+              try:
+                     await user.send(message)
+                     await ctx.reply(f'Sent to {user.mention}', delete_after=5)
+              except:
+                     await ctx.reply(f"Couldnt send to {user.mention} as they have their DM's closed", delete_after=5)
+
 
        @commands.command(aliases=['latency', 'delay', 'rtt'])
        async def ping(self, ctx):
@@ -81,11 +232,17 @@ class General(commands.Cog):
               embed.timestamp = discord.utils.utcnow()
               await ctx.send(embed = embed)
 
-def setup(bot):
+       @commands.command(name='sync')
+       @commands.is_owner()
+       async def syncing(self, ctx):
+              await self.bot.tree.sync(guild=discord.Object(id=770627092298596353))
+              await ctx.send(f'Synced.', delete_after=10)
+
+async def setup(bot):
        global bota
        bota=bot
        bot.help_command=MyHelpCommand()
-       bot.add_cog(General(bot))
+       await bot.add_cog(General(bot), guilds=[discord.Object(id=770627092298596353)])
 
 class MyHelpCommand(commands.HelpCommand):
        
@@ -138,7 +295,7 @@ class Nothing(discord.ui.Select):
               # print(0)
               cog_name=interaction.data['values'][0]
               
-              cog=self.bot.get_cog(name=str(cog_name))
+              cog=self.bot.get_cog(str(cog_name))
               commands_list=cog.get_commands()
               
               classer=self.bot.help_command

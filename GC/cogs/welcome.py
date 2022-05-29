@@ -35,5 +35,5 @@ class WELCOME(commands.Cog):
               channel = member.guild.get_channel(cfg.FAREWELL)
               await channel.send(embed = embed)
 
-def setup(bot):
-       bot.add_cog(WELCOME(bot))
+async def setup(bot):
+       await bot.add_cog(WELCOME(bot))

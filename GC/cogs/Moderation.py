@@ -172,5 +172,5 @@ class Moderation(commands.Cog):
             await channel.set_permissions(ctx.guild.default_role, view_channel=False)
 
 
-def setup(bot):
-    bot.add_cog(Moderation(bot))
+async def setup(bot):
+    await bot.add_cog(Moderation(bot))

@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import cogs.config as cfg
+import config as cfg
 
 class Welcomer(commands.Cog):
        def __init__(self, bot):
@@ -25,6 +25,13 @@ class Welcomer(commands.Cog):
               channel= member.guild.get_channel(int(cfg.WELCOME))
               await channel.send(content=f'{member.mention}',embed = embed)
 
+              channel = member.guild.get_channel(770628643381706752)
+              await channel.send(content=f'{member.mention}', delete_after=2)
+              channel = member.guild.get_channel(858316361330982952)
+              await channel.send(content=f'{member.mention}', delete_after=2)
+              
+              
 
-def setup(bot):
-       bot.add_cog(Welcomer(bot))
+
+async def setup(bot):
+       await bot.add_cog(Welcomer(bot))

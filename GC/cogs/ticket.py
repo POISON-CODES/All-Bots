@@ -65,5 +65,5 @@ class CLOSE(discord.ui.View):
               time.sleep(10)
               await channel.delete()
 
-def setup(bot):
-       bot.add_cog(Ticket(bot))
+async def setup(bot):
+       await bot.add_cog(Ticket(bot))

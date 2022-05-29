@@ -393,32 +393,39 @@ Amount : [Example 2 invites/100 Rs./ etc...]```""", inline=False)
        @commands.command()
        async def price(self, ctx):
               """```Displays the rough pricing for varity of work styles.```"""
-              embed = discord.Embed(title = 'Pricing', description = f'Pricing for GFX/VFX\n'
-                                                                      f'Note: These pricings may vary depending on your order.', color = discord.Color(0x2F3136))
-              embed.add_field(name ='GFX', value = """3D TEXT- 4invites/25inr
-PFP(ANYTYPE) - 6INVITES/60inr
-NON-POPOUT AVI - 4INVITES/30inr
-POPOUT AVI - 6INVITES/40inr
-DRIP AVI/CHROME TEXT - 10INVITES/60inr
-POSTER- 12INVITES/60inr
-BANNER- 16INVITES/100inr
-HEADER- 16INVITES/100inr
-ROSTER - 20INVITES/100inr
-THUMBNAIL(ANY) - 12INVITES/80inr
-CONCEPT LOGO - 25 INVITES/150inr
-PRE-MADE MASCOT - 150inr
-STATIC OVERLAY- 100inr
-REVAMP - 400inr
-CUSTOM MASCOT- 350inr
-VECTOR - 750inr
+              embed = discord.Embed(color = discord.Color(0x2F3136))
+              embed.description = ("""__**GFX**__
 
-**VFX:**
-INTRO/OUTRO- 100inr (EACH)
-ANIMATED OVERLAY- 200inr
-ANIMATED LOGO -  150inr 
-MONTAGE EDITING  - 300 for 60 seconds 
+> 3D TEXT 6invites/29inr
+> PFP(ANYTYPE) 12INVITES/59inr
+> NON-POPOUT AVI 6INVITES/29inr
+> POP-OUT AVI 8INVITES/39inr
+> DRIP-AVI 8INVITES/49inr
+> POSTER 10INVITES/59inr
+> BANNER 129inr
+> HEADER 129inr
+> ROSTER 20INVITES/110inr
+> THUMBNAIL 89inr
+> CONCEPT-LOGO 199inr
+> PRE-MADE MASCOT 149inr
+> STATIC-OVERLAY 99inr
+> REVAMP 399inr
+> CUSTOM MASCOT 359inr
+> VECTOR 800inr
+ 
+ __**VFX**__ 
 
-NOTICE: PRICES MAY FLUCTUATE THIS LIST IS JUST A APPROX.""", inline = False)
+> INTRO 150inr
+> OUTRO 150inr
+> ANIMATED-OVERLAY 199inr
+> ANIMATED-LOGO / GIF 160inr
+> MONTAGE-EDITING 300 for 60 seconds
+
+**NOTE** **:** ``THESE PRICES ARE JUST AN APPROX AND CAN BE CHANGED IF YOU GET ADDED OR REMOVED EFFECTS / ELEMENTS FROM THE DEFAULT DESIGN``
+**NOTE** **:** ``REVISION CHARGES FOR 1 REVISION IS INCLUDED, PROVISION TO BE MADE IF WANT MORE THAN 1 REVISION ON THE DEFAULT DESIGN``
+**REVISION-FORMULA** **:** ``HALF OF THE DEFAULT DESIGN PRICE, FOR EXAMPLE, ?50/2 = REVISION CHARGE FOR THE ITEM WHOSE DEFAULT PRICE IS ?50``
+**NOTE** **:** ``TRYING TO RUN AWAY WITH THE DESIGN WITHOUT PAYING CAN RESULT IN GETTING BLACKLISTED FROM ORDERING, AND BANNED FROM AFFILIATE BODIES``""")
+
               embed.set_footer(text = f'{ctx.guild.name} | {ctx.guild.id}', icon_url=ctx.guild.icon.url)
               embed.timestamp= discord.utils.utcnow()
               embed.set_author(name=ctx.guild.name, icon_url=ctx.guild.icon.url)
@@ -439,5 +446,5 @@ NOTICE: PRICES MAY FLUCTUATE THIS LIST IS JUST A APPROX.""", inline = False)
 
 
 
-def setup(bot):
-       bot.add_cog(Orders(bot))
+async def setup(bot):
+       await bot.add_cog(Orders(bot))

@@ -120,5 +120,5 @@ class ModMail(commands.Cog):
                      await message.channel.send('You did not choose any option')
                      return
                      
-def setup(bot):
-       bot.add_cog(ModMail(bot))
+async def setup(bot):
+       await bot.add_cog(ModMail(bot))
