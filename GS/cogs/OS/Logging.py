@@ -20,7 +20,7 @@ class Logging(commands.Cog):
 Channel: {channel.mention}
 Open Time: <t:{int(data[1])}:F>
 Ticket Type: {data[2].upper()}"""
-
+                self.embed.timestamp =discord.utils.utcnow()
                 await self.logging_ch.send(embed=self.embed)
 
         async def on_ticket_close(self, channel: discord.TextChannel):
@@ -29,8 +29,30 @@ Ticket Type: {data[2].upper()}"""
 
         async def on_claim(self, channel: discord.TextChannel):
                 self.logging_ch=discord.utils.get(channel.guild.channels, id=977631651913924688)
-                pass
+                data = db.record(f'SELECT * FROM tickets WHERE CHANNEL = ?', channel.id)
+                self.embed.title='Ticket Claimed'
+                self.embed.description = f"""Client: <@{data[2]}>
+Artist: <@{data[3]}>
+Channel: <#{data[0]}>
+Style: {data[7]}
+Opened at: <t:{int(data[5])}:F>
+Condition: {data[4]}"""
+                self.embed.timestamp =discord.utils.utcnow()
+                await self.logging_ch.send(embed=self.embed)
 
-        async def on_unclaim(self, channel: discord.TextChannel):
+        async def on_unclaim(self, ctx: commands.Context):
+                self.logging_ch=discord.utils.get(ctx.guild.channels, id=977631651913924688)
+                data = db.record(f'SELECT * FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
+                self.embed.title='Ticket Unclaimed'
+                self.embed.description = f"""Client: <@{ctx.author.id}>
+Artist: <@{data[3]}>
+Channel: {ctx.channel.mention}
+Opened at: <t:{int(data[5])}:F>
+Condition: {data[4]}"""
+                self.embed.timestamp =discord.utils.utcnow()
+                await self.logging_ch.send(embed=self.embed)
+                
+        
+        async def on_ticket_delete(self, channel: discord.TextChannel):
                 self.logging_ch=discord.utils.get(channel.guild.channels, id=977631651913924688)
                 pass

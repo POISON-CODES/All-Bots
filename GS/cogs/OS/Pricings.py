@@ -51,14 +51,9 @@ class Pricing(commands.Cog):
                 for a in data:
                         x.add_row([a[0], a[1], a[2], a[3]])
 
-                x.add_row(["Adelaide", 1295, 1158259, 600.5])
-                x.add_row(["Brisbane", 5905, 1857594, 1146.4])
-                x.add_row(["Darwin", 112, 120900, 1714.7])
-                x.add_row(["Hobart", 1357, 205556, 619.5])
-
                 embed.description=f"```{x.build_table()}```"
 
-                await interaction.response.send_message(embed=embed, ephemeral=True)
+                await interaction.response.send_message(embed=embed, ephemeral=True)        
 
 
 async def setup(bot):

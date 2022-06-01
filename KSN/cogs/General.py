@@ -70,7 +70,7 @@ class General(commands.Cog):
                             return
                      embed.set_image(url=affiliation_image)
 
-              channel = interaction.guild.get_channel(892361823783895120)
+              channel = interaction.guild.get_channel(975988555623067678)
               await channel.send(content=f'<@&896683204961005620>', 
                      embed=embed,
                      view = PartnerView(link=link))
