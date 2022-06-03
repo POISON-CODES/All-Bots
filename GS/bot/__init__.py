@@ -16,7 +16,8 @@ import asyncio
 
 initial_extensions=['jishaku',
                         'cogs.OS.Panels',
-                        'cogs.OS.Pricings']
+                        'cogs.OS.Pricings',
+                        'cogs.tags']
 
 class Bot(Botbase):
         def __init__(self):

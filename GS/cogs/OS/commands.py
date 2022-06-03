@@ -102,7 +102,7 @@ class Ticket_Commands(commands.Cog):
                 await Logging().on_unclaim(ctx.channel)
 
         @commands.command()
-        async def details(self, ctx, member: discord.Member = None):
+        async def details(self, ctx):
                 pass
 
         @commands.command()

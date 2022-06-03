@@ -1,17 +1,38 @@
 import discord
 from discord.ext import commands
 
-
 import time
-
+import asyncio
+import re
 
 from db import db
+
+class Confirmation(discord.ui.View):
+        def __init__(self):
+                self.value= None
+                super().__init__(timeout=None)
+
+        @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
+        async def confrmation(self, button = discord.ui.Button, interaction = discord.Interaction):
+                self.value=True
+                return self.value
+        @discord.ui.button(label='No', style=discord.ButtonStyle.red)
+        async def deny(self, button = discord.ui.Button, interaction = discord.Interaction):
+                self.value=False
+                return self.value
+
+        async def on_timeout(self):
+                self.value=False
+                return self.value
+
 
 class SelectView(discord.ui.Select):
         def __init__(self, options):
                 super().__init__(placeholder = 'Select a channnel to make receipt.', options = options)
 
         async def callback(self, interaction: discord.Interaction):
+                await interaction.response.defer(ephemeral=True)
+
                 channel = discord.utils.get(interaction.guild.channels, name = self.values[0])
                 data = db.record(f"SELECT * FROM tickets WHERE CHANNEL = ?", channel.id)
                 embed = discord.Embed(color = discord.Color(0x5affbb))
@@ -28,13 +49,41 @@ Style : {data[7]}"""
                 embed.description=embed.description + f"""
 Price : {data2[1]} INR / {data2[2]} USD / {data2[3]} Invites"""
 
-                await interaction.response.send_message(content = 'Enter the link for the Design.',embed=embed, ephemeral=True)
+                await interaction.followup.send(content = 'Enter the link for the Design.',embed=embed, ephemeral=True)
 
+                def check(msg):
+                        return msg.author is interaction.user and msg.channel == interaction.channel
                 try:
-                        m = await 
-                                
+                        m = await interaction.client.wait_for('message', check = check, timeout=300)
 
+                except asyncio.TimeoutError:
+                        embed.description='Timeout'
+                        await interaction.followup.send(embed=embed, ephemeral=True)
+                        return
 
+                if not m.content.startswith('http'):
+                        embed.description=f'only `http` and `https` link format is allowed. Please Try again.'
+                        await interaction.followup.send(embed=embed, ephemeral=True)
+                        await m.delete()
+                        return
+                
+                embed.set_image(url=m.content)
+                await m.delete()
+                view=Confirmation()
+                view.value=None
+
+                await interaction.followup.send(embed=embed, ephemeral=True, view=view)
+                await view.wait()
+
+                if view.value is False:
+                        embed.description='Timeout'
+                        embed.set_image(url='')
+                        await interaction.followup.send(embed=embed, ephemeral=True)
+                        return
+                
+                channel = discord.utils.get(interaction.guild.channels, id = 918104039181414451)
+                await channel.send(embed=embed)
+                await interaction.followup.send(content = f'Done', ephemeral=True)
 
 class SecondView(discord.ui.View):
         def __init__(self, options):
