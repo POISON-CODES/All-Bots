@@ -1,3 +1,4 @@
+from http.client import HTTPException
 import discord
 from discord.ext import commands
 
@@ -6,6 +7,7 @@ from cogs.OS.Logging import Logging
 
 
 from db import db
+import time
 
 
 class ClaimView(discord.ui.View):
@@ -48,7 +50,6 @@ class ClaimView(discord.ui.View):
                 await self.ctx.message.delete()
                 await interaction.message.delete()
                 await Logging().on_claim(interaction.channel)
-
 
 
 class Ticket_Commands(commands.Cog):
@@ -107,8 +108,24 @@ class Ticket_Commands(commands.Cog):
 
         @commands.command()
         async def ticket_close(self, ctx):
+                client = db.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
+                client = ctx.guild.get_members(id = client)
 
-                await Logging().on_ticket_close(ctx.channel)
+                await ctx.channel.set_permission(client, send_messages=False)
+                
+                db.exec(f'UPDATE tickets SET CONDITION = ? CLOSE_TIME =? WHERE CHANNEL = ?', 'closed',int(time.time()), ctx.channel.id)
+                db.commit()
+
+                self.embed.title = 'Ticket Closed'
+                self.embed.description = f'The Ticket has been closed by {ctx.author.mention} for the ticket of {client.mention}'
+                await ctx.send(embed=self.embed)
+                try:
+                        await client.send(embed=self.embed)
+                except HTTPException:
+                        pass
+
+                
+                await Logging().on_ticket_close(ctx.channel, user=ctx.author)
 
         @commands.command()
         async def ticket_delete(self, ctx):

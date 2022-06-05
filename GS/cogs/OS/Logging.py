@@ -23,9 +23,23 @@ Ticket Type: {data[2].upper()}"""
                 self.embed.timestamp =discord.utils.utcnow()
                 await self.logging_ch.send(embed=self.embed)
 
-        async def on_ticket_close(self, channel: discord.TextChannel):
+        async def on_ticket_close(self, channel: discord.TextChannel, user: discord.User):
                 self.logging_ch=discord.utils.get(channel.guild.channels, id=977631651913924688)
-                pass
+                
+                data = db.record(f'SELECT * FROM tickets WHERE CHANNEL = ?', channel.id)
+                self.embed.title = f'Ticket Closed'
+                self.embed.description=(f"""Channel: <#{data[0]}>
+Client: <@{data[2]}>'
+Artist: ?
+State: {data[4]}
+Open Time: <t:{int(data[5])}:F>
+Close Time: <t:{int(data[6])}:F>
+Style: ?""", f'<@{data[3]}>' if not data[3] is 0 else 'N/A',
+data[7] if not data[7] is 'unoccupied' else data[7])
+                self.embed.add_field(name='Moderator Responsible', value =f'{user.mention} | **{user.display_name}**')
+                self.embed.timestamp = discord.utils.utcnow()
+                
+                await self.logging_ch.send(embed=self.embed)
 
         async def on_claim(self, channel: discord.TextChannel):
                 self.logging_ch=discord.utils.get(channel.guild.channels, id=977631651913924688)
@@ -51,8 +65,7 @@ Opened at: <t:{int(data[5])}:F>
 Condition: {data[4]}"""
                 self.embed.timestamp =discord.utils.utcnow()
                 await self.logging_ch.send(embed=self.embed)
-                
-        
+                        
         async def on_ticket_delete(self, channel: discord.TextChannel):
                 self.logging_ch=discord.utils.get(channel.guild.channels, id=977631651913924688)
                 pass
