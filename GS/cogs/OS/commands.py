@@ -107,6 +107,7 @@ class Ticket_Commands(commands.Cog):
 
         @commands.command()
         async def ticket_close(self, ctx):
+
                 await Logging().on_ticket_close(ctx.channel)
 
         @commands.command()
