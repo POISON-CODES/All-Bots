@@ -29,7 +29,7 @@ class Buttons(discord.ui.View):
               super().__init__(timeout=None)
 
        @discord.ui.button(label = 'GFX', style=discord.ButtonStyle.gray, custom_id='Gray:GFX')
-       async def GFX_button(self, button = discord.ui.Button, interaction = discord.Interaction):
+       async def GFX_button(self, interaction = discord.Interaction, button = discord.ui.Button):
               await interaction.response.send_message('Opening Your Ticket. Please wait a few seconds...', ephemeral = True)
               
               artists=interaction.guild.get_role(cfg.ARTISTS)
@@ -58,7 +58,7 @@ class Buttons(discord.ui.View):
               db.commit()
 
        @discord.ui.button(label = 'VFX', style=discord.ButtonStyle.gray, custom_id='Gray:VFX')
-       async def VFX_button(self, button = discord.ui.Button, interaction = discord.Interaction):
+       async def VFX_button(self, interaction = discord.Interaction, button = discord.ui.Button):
               await interaction.response.send_message('Opening Your Ticket. Please wait a few seconds...', ephemeral = True)
               
               artists=interaction.guild.get_role(cfg.ARTISTS)

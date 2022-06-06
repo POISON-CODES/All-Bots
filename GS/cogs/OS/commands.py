@@ -6,7 +6,7 @@ from discord.ext import commands
 from cogs.OS.Logging import Logging
 
 
-from db import db
+from db import dbb
 import time
 
 
@@ -17,7 +17,7 @@ class ClaimView(discord.ui.View):
                 super().__init__(timeout=None)
 
 
-        data = db.column(f'SELECT STYLE FROM pricing')
+        data = dbb.column(f'SELECT STYLE FROM pricing')
         options = []
         for a in data:
                 options.append(discord.SelectOption(label=str(a)))
@@ -27,7 +27,9 @@ class ClaimView(discord.ui.View):
                 await interaction.response.defer(ephemeral=True)
 
                 value = select.values[0]
-                if not self.ctx.author is interaction.user:
+                print(self.ctx.author.name)
+                print(interaction.user.name)
+                if not self.ctx.author.id is interaction.user.id:
                         self.embed.description=f'Style can only be selected by the author of the command.'
 
                         await interaction.followup.send(embed=self.embed, ephemeral=True)
@@ -35,17 +37,17 @@ class ClaimView(discord.ui.View):
                         await interaction.message.delete()
                         return
 
-                db.exec(f'UPDATE tickets SET ARTIST = ? CONDITION = ? STYLE =? WHERE CHANNEL =?', interaction.user.id, 'claimed', value, interaction.channel.id)
-                db.commit()
+                dbb.exec(f'UPDATE tickets SET ARTIST = ? ,CONDITION = ?, STYLE =? WHERE CHANNEL =?', interaction.user.id, 'claimed', value, interaction.channel.id)
+                dbb.commit()
 
-                client = db.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL =?', interaction.channel.id)
+                client = dbb.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL =?', interaction.channel.id)
 
-                self.embed.desccription=f'Ticket Claimed.\nStyle: {value}\nArtist: {interaction.user.mention}\nClient: <@{client}>'
+                self.embed.description=f'Ticket Claimed.\nStyle: {value}\nArtist: {interaction.user.mention}\nClient: <@{client}>'
                 await interaction.followup.send(embed=self.embed, ephemeral=True)
 
-                client = await interaction.guild.get_member(client)
+                client = interaction.guild.get_member(client)
                 await client.send(embed=self.embed)
-                category=discord.utils.get(interaction.guild.categories, 942493034707312750)
+                category=discord.utils.get(interaction.guild.categories, id=942493034707312750)
                 await interaction.channel.edit(category=category)
                 await self.ctx.message.delete()
                 await interaction.message.delete()
@@ -61,9 +63,9 @@ class Ticket_Commands(commands.Cog):
         async def claim(self, ctx, member: discord.Member = None):
                 if not member is None:
                         ctx.author = member
-                val = db.field(f'SELECT ARTIST FROM tickets WHERE CHANNEL = ?', ctx.author.id)
+                val = dbb.field(f'SELECT ARTIST FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
 
-                if not val is 0:
+                if val != 0:
                         self.embed.description = f'This channel is already claimed by <@{val}>'
                         await ctx.send(embed=self.embed)
                         return
@@ -75,32 +77,32 @@ class Ticket_Commands(commands.Cog):
 
         @commands.command()
         async def unclaim(self, ctx):
-                artist = db.field(f'SELET ARTIST FORM tickets WHERE CHANNEL = ?', ctx.channel.id)
-                if artist is 0:
+                artist = dbb.field(f'SELECT ARTIST FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
+                if artist == 0:
                         self.embed.description = f'This ticket has not yet been claimed.'
                         await ctx.send(embed=self.embed, delete_after=5)
                         return
 
-                if not artist is ctx.author.id:
+                if artist != ctx.author.id:
                         self.embed.description = f'This ticket has been claimed by <@{artist}>'
                         await ctx.send(embed=self.embed, delete_after=5)
                         return
 
-                db.exec('UPDATE tickets SET ARTIST = ? CONDITION = ? STYLE = ? WHERE CHANNEL = ?', 0, 'unoccupied', 'unoccupied', ctx.channel.id)
-                db.commit()
+                dbb.exec('UPDATE tickets SET ARTIST = ?, CONDITION = ?, STYLE = ? WHERE CHANNEL = ?', 0, 'unoccupied', 'unoccupied', ctx.channel.id)
+                dbb.commit()
 
-                client = db.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL =?', ctx.channel.id)
-                client = discord.utils.get(ctx.guild.membere, client)
+                client = dbb.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL =?', ctx.channel.id)
+                client = discord.utils.get(ctx.guild.members, id=client)
                 
                 self.embed.description=f'Ticket Unclaimed.'
                 await ctx.send(embed=self.embed, delete_after = 5)
                 self.embed.description = f'Yout ticket in <#{ctx.channel.id}> has been unclaimed by {ctx.author.mention}.'
                 await client.send(embed=self.embed)
                 
-                category=discord.utils.get(ctx.guild.categories, 918104010135834674)
+                category=discord.utils.get(ctx.guild.categories, id=918104010135834674)
                 await ctx.channel.edit(category=category)
 
-                await Logging().on_unclaim(ctx.channel)
+                await Logging().on_unclaim(ctx)
 
         @commands.command()
         async def details(self, ctx):
@@ -108,13 +110,14 @@ class Ticket_Commands(commands.Cog):
 
         @commands.command()
         async def ticket_close(self, ctx):
-                client = db.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
-                client = ctx.guild.get_members(id = client)
+                client = dbb.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL = ?', ctx.channel.id)
+                client = await ctx.guild.fetch_member(client)
+                # print(client.name)
 
-                await ctx.channel.set_permission(client, send_messages=False)
+                await ctx.channel.set_permissions(client, send_messages=False)
                 
-                db.exec(f'UPDATE tickets SET CONDITION = ? CLOSE_TIME =? WHERE CHANNEL = ?', 'closed',int(time.time()), ctx.channel.id)
-                db.commit()
+                dbb.exec(f'UPDATE tickets SET CONDITION = ?, CLOSE_TIME =? WHERE CHANNEL = ?', 'closed',int(time.time()), ctx.channel.id)
+                dbb.commit()
 
                 self.embed.title = 'Ticket Closed'
                 self.embed.description = f'The Ticket has been closed by {ctx.author.mention} for the ticket of {client.mention}'
@@ -129,7 +132,17 @@ class Ticket_Commands(commands.Cog):
 
         @commands.command()
         async def ticket_delete(self, ctx):
-                await Logging().on_ticket_delete(ctx.channel)
+                client = dbb.field(f'SELECT CLIENT FROM tickets WHERE CHANNEL =?',ctx.channel.id)
+                if client is None:
+                        self.embed.description = f'This channel does not appear to be a ticket channel.'
+                        await ctx.send(embed=self.embed)
+                        return
+
+                dbb.exec(f'UPDATE tickets SET CONDITION = ? WHERE CHANNEL = ?', 'deleted', ctx.channel.id)
+                dbb.commit()
+                
+                await Logging().on_ticket_delete(ctx.channel, user=ctx.author)
+                await ctx.channel.delete()
 
         @commands.command()
         async def transcript(self, ctx):

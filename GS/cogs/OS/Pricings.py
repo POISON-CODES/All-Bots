@@ -3,7 +3,7 @@ from discord.ext import commands
 
 from discord import app_commands
 
-from db import db
+from db import dbb
 
 class PrettyTable:
   def __init__(self, headers: list):
@@ -47,7 +47,7 @@ class Pricing(commands.Cog):
                 embed.title="Pricing."
 
                 x=PrettyTable(["Style", "INR Price", "USD Price", "INV Price"])
-                data=db.records(f"SELECT * FROM pricing")
+                data=dbb.records(f"SELECT * FROM pricing")
                 for a in data:
                         x.add_row([a[0], a[1], a[2], a[3]])
 

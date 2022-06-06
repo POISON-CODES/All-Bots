@@ -1,28 +1,31 @@
-import discord
-from discord.ext import commands
-
+import asyncio
 import time
+
+import config as cfg
+import discord
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
-from discord.ext.commands import Bot as Botbase
 from cogs.OS.Panels import MainPanel
+from cogs.OS.Receipt_System import MainReceiptPanelClass
 
-from db import db
+from db import dbb
 
-import config as cfg
-import asyncio
+from discord.ext import commands
+from discord.ext.commands import Bot as Botbase
 
 initial_extensions=['jishaku',
                         'cogs.OS.Panels',
                         'cogs.OS.Pricings',
-                        'cogs.tags']
+                        'cogs.tags',
+                        'cogs.OS.commands',
+                        'cogs.OS.Receipt_System']
 
 class Bot(Botbase):
         def __init__(self):
                 self.scheduler=AsyncIOScheduler()
-                self.db=db                
+                self.db=dbb                
                 self.db.autosave(self.scheduler)
                 self.scheduler.start()
 
@@ -43,6 +46,7 @@ class Bot(Botbase):
                 self.startup_time=int(time.time())
 
                 self.add_view(MainPanel())
+                self.add_view(MainReceiptPanelClass())
                 
                 await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Graphics Studio'))
 

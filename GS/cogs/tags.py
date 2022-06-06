@@ -13,7 +13,7 @@ class Confirmation(discord.ui.View):
                 super().__init__(timeout=300)
 
         @discord.ui.button(label='Confirm', emoji='✅', style=discord.ButtonStyle.green)
-        async def confirm_callback(self, button = discord.ui.Button, interaction = discord.Interaction):
+        async def confirm_callback(self, interaction = discord.Interaction,  button = discord.ui.Button):
                 self.value=True
                 for c in self.children:
                         c.disabled = True
@@ -54,13 +54,13 @@ class Tags(commands.Cog):
                 value=''
                 if content in tags:
                         value = self.bot.db.field('SELECT TAG_VALUE FROM tags WHERE TAG_NAME=?', str(content))
-                        embed=discord.Embed(title=content, description=f"""{value}""", color=self.bot.COLOR)
+                        embed=discord.Embed(title=content, description=f"""{value}""", color=discord.Color(0x5affbb))
                         await message.reply(embed= embed)
 
         @commands.command(name='create')
         @commands.has_permissions(administrator=True)
         async def create_taG(self, ctx, *, name):
-                embed=discord.Embed(title=name,description='Enter the value for Tag', color=self.bot.COLOR)
+                embed=discord.Embed(title=name,description='Enter the value for Tag', color=discord.Color(0x5affbb))
                 bot_msg=await ctx.send(embed = embed)
 
                 def check(message):
@@ -72,7 +72,9 @@ class Tags(commands.Cog):
                         await bot_msg.edit(embed=embed)
                 view=Confirmation()
                 embed.description=value.content
-                view.message=await bot_msg.edit(embed = embed, view=view)
+                view.message=bot_msg
+                await bot_msg.edit(embed = embed, view=view)
+                
                 await view.wait()
                 if view.value:
                         self.bot.db.exec(f'INSERT INTO tags (AUTHOR, TAG_NAME, TAG_VALUE) VALUES (?,?,?)', ctx.author.id, str(name), str(value.content))
@@ -82,7 +84,7 @@ class Tags(commands.Cog):
         @commands.has_permissions(administrator=True)
         async def del_tag(self, ctx, *,name):
                 tags=self.bot.db.column('SELECT TAG_NAME FROM tags')
-                embed=discord.Embed(title=name, description='No such tag exists.', color=self.bot.COLOR)
+                embed=discord.Embed(title=name, description='No such tag exists.', color=discord.Color(0x5affbb))
                 if not name in tags:
                         await ctx.reply(embed= embed)
                         return
@@ -102,15 +104,15 @@ class Tags(commands.Cog):
 
                 vlast=value.rfind(', ')
                 value = value[:vlast] + '' + value  [vlast + 1:]
-                embed=discord.Embed(description=value, color=self.bot.COLOR)
-                embed.set_footer(text=f'Use `{cfg.PREFIX}<tag name> to get the tag info.')
+                embed=discord.Embed(description=value, color=discord.Color(0x5affbb))
+                embed.set_footer(text=f'Use {cfg.PREFIX}<tag name> to get the tag info.')
                 await ctx.send(embed=embed)
 
         @commands.command(name='edit_tag')
         @commands.has_permissions(administrator=True)
         async def edit_tag(self, ctx, *, name):
                 tags=self.bot.db.column('SELECT TAG_NAME FROM tags')
-                embed=discord.Embed(description=f'No Tag with the name found.', color=self.bot.COLOR)
+                embed=discord.Embed(description=f'No Tag with the name found.', color=discord.Color(0x5affbb))
                 if not name in tags:
                         await ctx.reply(embed= embed)
                         return
@@ -128,7 +130,7 @@ class Tags(commands.Cog):
                         return message.author== ctx.author and message.channel == ctx.channel
 
                 try:
-                        msg=self.bot.wait_for('message', check=check, timeout=600)
+                        msg=await self.bot.wait_for('message', check=check, timeout=600)
                 except asyncio.TimeoutError:
                         embed.description=f'TimeUp!!! Try again.'
                         await ctx.send(embed = embed)

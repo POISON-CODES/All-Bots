@@ -3,7 +3,7 @@ from discord.ext import commands
 
 from cogs.OS.Logging import *
 
-from db import db
+from db import dbb
 
 import time
 
@@ -23,9 +23,9 @@ class FXPanel(discord.ui.View):
                 tc = await category.create_text_channel(name='Paid-Ticket-')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -64,9 +64,9 @@ This Ticket will be terminated if response is given in 15 minutes"""
                 tc = await category.create_text_channel(name='Invite-Ticket-')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -104,9 +104,9 @@ This Ticket will be terminated if response is given in 15 minutes"""
                 tc = await category.create_text_channel(name='Booster-Ticket-')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'fx')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -153,9 +153,9 @@ class ApplicationPanel(discord.ui.View):
                 tc = await category.create_text_channel(name='Server Support Application')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'app')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'app')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -193,9 +193,9 @@ This Ticket will be terminated if response is given in 15 minutes"""
                 tc = await category.create_text_channel(name='Designer Application')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'app')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'app')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -238,9 +238,9 @@ class ProgramPanel(discord.ui.View):
                 tc = await category.create_text_channel(name='Affiliation Program')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -278,9 +278,9 @@ This Ticket will be terminated if response is given in 15 minutes"""
                 tc = await category.create_text_channel(name='Developer Program')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -318,9 +318,9 @@ This Ticket will be terminated if response is given in 15 minutes"""
                 tc = await category.create_text_channel(name='Content Creator Program')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'prog')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -363,9 +363,9 @@ class BotPanel(discord.ui.View):
                 tc = await category.create_text_channel(name='Bot Order')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'bot')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'bot')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -408,9 +408,9 @@ class SupportPanel(discord.ui.View):
                 tc = await category.create_text_channel(name='Bot')
 
 
-                db.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'bot')
-                db.commit()
-                tno=db.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
+                dbb.exec(f'INSERT INTO tickets (CHANNEL, CLIENT, OPEN_TIME, PANEL) VALUES (?, ?, ?, ?)', tc.id, interaction.user.id, time.time(), 'bot')
+                dbb.commit()
+                tno=dbb.field(f'SELECT TNO FROM tickets WHERE CHANNEL=?', tc.id)
 
 
                 await tc.edit(name=tc.name+' '+str(tno), overwrites={})
@@ -443,7 +443,7 @@ class MainPanel(discord.ui.View):
 
         @discord.ui.button(label='Order FX', style=discord.ButtonStyle.green, custom_id='MainPanelFX')
         async def fx_main(self, interaction: discord.Interaction, button: discord.ui.Button):
-                ch= db.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'fx')
+                ch= dbb.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'fx')
                 if not ch is None:
                         embed=discord.Embed(color = discord.Color(0x5affbb))
                         embed.description=f"You already have a ticket open for the Selected Category, <#{ch}>.\nYou cannot have more than one tickets for a Category.\nFor any issues, Open a Help Ticket."
@@ -478,7 +478,7 @@ class MainPanel(discord.ui.View):
         
         @discord.ui.button(label='Applications', style=discord.ButtonStyle.green, custom_id='MainPanelApp')
         async def App_main(self, interaction: discord.Interaction, button: discord.ui.Button):
-                ch= db.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'app')
+                ch= dbb.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'app')
                 if not ch is None:
                         embed=discord.Embed(color = discord.Color(0x5affbb))
                         embed.description=f"You already have a ticket open for the Selected Category, <#{ch}>.\nYou cannot have more than one tickets for a Category.\nFor any issues, Open a Help Ticket."
@@ -506,7 +506,7 @@ class MainPanel(discord.ui.View):
 
         @discord.ui.button(label='Programs', style=discord.ButtonStyle.green, custom_id='MainPanelProg')
         async def Prog_main(self, interaction: discord.Interaction, button: discord.ui.Button):
-                ch= db.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'prog')
+                ch= dbb.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'prog')
                 if not ch is None:
                         embed=discord.Embed(color = discord.Color(0x5affbb))
                         embed.description=f"You already have a ticket open for the Selected Category, <#{ch}>.\nYou cannot have more than one tickets for a Category.\nFor any issues, Open a Help Ticket."
@@ -522,7 +522,7 @@ class MainPanel(discord.ui.View):
 
         @discord.ui.button(label='Order Bots', style=discord.ButtonStyle.green, custom_id='MainPanelBot')
         async def Bot_main(self, interaction: discord.Interaction, button: discord.ui.Button):
-                ch= db.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'bot')
+                ch= dbb.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'bot')
                 if not ch is None:
                         embed=discord.Embed(color = discord.Color(0x5affbb))
                         embed.description=f"You already have a ticket open for the Selected Category, <#{ch}>.\nYou cannot have more than one tickets for a Category.\nFor any issues, Open a Help Ticket."
@@ -555,7 +555,7 @@ For pricing of features required are not listed above , open a ticket**"""
 
         @discord.ui.button(label='Support/Help', style=discord.ButtonStyle.green, custom_id='MainPanelSupp')
         async def Supp_main(self, interaction: discord.Interaction, button: discord.ui.Button):
-                ch= db.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'supp')
+                ch= dbb.field(f'SELECT CHANNEL FROM tickets WHERE CLIENT = ? AND PANEL = ?', interaction.user.id, 'supp')
                 if not ch is None:
                         embed=discord.Embed(color = discord.Color(0x5affbb))
                         embed.description=f"You already have a ticket open for the Selected Category, <#{ch}>.\nYou cannot have more than one tickets for a Category.\nFor any issues, Open a Help Ticket."

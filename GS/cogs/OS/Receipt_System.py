@@ -5,7 +5,7 @@ import time
 import asyncio
 import re
 
-from db import db
+from db import dbb
 
 class Confirmation(discord.ui.View):
         def __init__(self):
@@ -14,16 +14,19 @@ class Confirmation(discord.ui.View):
 
         @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
         async def confrmation(self, button = discord.ui.Button, interaction = discord.Interaction):
+                print('TRUE')
                 self.value=True
-                return self.value
+                self.stop()
+
         @discord.ui.button(label='No', style=discord.ButtonStyle.red)
         async def deny(self, button = discord.ui.Button, interaction = discord.Interaction):
+                print('FALSE')
                 self.value=False
-                return self.value
+                self.stop()
 
         async def on_timeout(self):
                 self.value=False
-                return self.value
+                self.stop()
 
 
 class SelectView(discord.ui.Select):
@@ -34,27 +37,24 @@ class SelectView(discord.ui.Select):
                 await interaction.response.defer(ephemeral=True)
 
                 channel = discord.utils.get(interaction.guild.channels, name = self.values[0])
-                data = db.record(f"SELECT * FROM tickets WHERE CHANNEL = ?", channel.id)
+                data = dbb.record(f"SELECT * FROM tickets WHERE CHANNEL = ?", channel.id)
                 embed = discord.Embed(color = discord.Color(0x5affbb))
                 embed.title = f'Receipt #{data[1]}'
                 embed.description = f"""Channel : {channel.name}
 Ticket Number: {data[1]}
 Client : <@{data[2]}>
-Artist : {interaction.author.mention}
+Artist : {interaction.user.mention}
 Open Time : <t:{data[5]}:F>
 Close Time : <t:{int(time.time())}:F>
 Style : {data[7]}"""
 
-                data2 = db.record(f'SELECT * FROM pricing WHERE STYLE =?', data[7])
-                embed.description=embed.description + f"""
-Price : {data2[1]} INR / {data2[2]} USD / {data2[3]} Invites"""
-
                 await interaction.followup.send(content = 'Enter the link for the Design.',embed=embed, ephemeral=True)
 
                 def check(msg):
-                        return msg.author is interaction.user and msg.channel == interaction.channel
+                        return msg.author == interaction.user and msg.channel == interaction.channel
                 try:
-                        m = await interaction.client.wait_for('message', check = check, timeout=300)
+                        m = await interaction.client.wait_for('message',check=check , timeout=10)
+                        print(m.id)
 
                 except asyncio.TimeoutError:
                         embed.description='Timeout'
@@ -74,15 +74,17 @@ Price : {data2[1]} INR / {data2[2]} USD / {data2[3]} Invites"""
 
                 await interaction.followup.send(embed=embed, ephemeral=True, view=view)
                 await view.wait()
-
+                print(view.value)
                 if view.value is False:
                         embed.description='Timeout'
                         embed.set_image(url='')
                         await interaction.followup.send(embed=embed, ephemeral=True)
                         return
-                
+                print('1')
                 channel = discord.utils.get(interaction.guild.channels, id = 918104039181414451)
+                print('2')
                 await channel.send(embed=embed)
+                print('3')
                 await interaction.followup.send(content = f'Done', ephemeral=True)
 
 class SecondView(discord.ui.View):
@@ -98,22 +100,39 @@ class MainReceiptPanelClass(discord.ui.View):
 
         @discord.ui.button(label='Make Receipt', style=discord.ButtonStyle.green, custom_id='receipt')
         async def main_Receipt_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-                data = db.records(f'SELECT CHANNELS, CLIENTS FROM tickets WHERE ARTIST = ?', interaction.user.id)
-                if data is None:
+                data = dbb.records(f'SELECT CHANNEL, CLIENT FROM tickets WHERE ARTIST = ?', interaction.user.id)
+                print(data)
+                if len(data) is 0:
                         self.embed.description = f"I could not find any channels for the artist."
                         await interaction.response.send_message(embed=self.embed,ephemeral=True)
                         return
                 
                 options = []
-
+                print(data)
                 for channels, clients in data:
-                        channels = discord.utils.get(interaction.guild.channels, channels)
+                        print(channels)
+                        print(clients)
+                        channels = discord.utils.get(interaction.guild.channels, id=channels)
                         if channels is None:
                                 return
 
-                        clients = discord.utils.get(interaction.guild.members, clients)
+                        clients = discord.utils.get(interaction.guild.members, id=clients)
                         options.append(discord.SelectOption(label = f'{channels.name}', description = f"client - {clients.display_name}"))
 
                 view = SecondView(options)
                 self.embed.description = "Choose the channel/Client for the receipt"
                 await interaction.response.send_message(embed=self.embed, view = view, ephemeral=True)
+
+
+class RceptPanel(commands.Cog):
+        def __init__(self, bot):
+                self.bot = bot
+
+        @commands.command()
+        async def callr(self, ctx):
+                view = MainReceiptPanelClass()
+                await ctx.send(content='sfbdbd', view = view)
+
+
+async def setup(bot):
+        await bot.add_cog(RceptPanel(bot))
